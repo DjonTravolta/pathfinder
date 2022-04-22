@@ -114,6 +114,13 @@ impl StarkHash {
         Ok(Self(bytes))
     }
 
+    /// Creates a [StarkHash] from a u64.
+    ///
+    /// Uses the big-endian representation, extended with zeroes.
+    pub fn from_u64(value: u64) -> Self {
+        Self::from_be_slice(&value.to_be_bytes()).expect("64 bits is less than 251 bits")
+    }
+
     /// Returns `true` if the value of [`StarkHash`] is larger than `2^251 - 1`.
     ///
     /// Every [`StarkHash`] that is used to traverse a Merkle-Patricia Tree
