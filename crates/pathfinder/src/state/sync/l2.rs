@@ -11,6 +11,7 @@ use crate::sequencer::error::SequencerError;
 use crate::sequencer::reply::state_update::{Contract, StateDiff};
 use crate::sequencer::reply::Block;
 use crate::sequencer::{self};
+use crate::state::block_hash::compute_block_hash;
 use crate::state::class_hash::extract_abi_code_hash;
 use crate::state::CompressedContract;
 
@@ -185,7 +186,27 @@ async fn download_block(
     let result = sequencer.block_by_number(block_number.into()).await;
 
     match result {
-        Ok(block) => Ok(DownloadBlock::Block(Box::new(block))),
+        Ok(block) => {
+            // Check if block hash is correct.
+            //
+            // NOTE: Blocks _after_ the 0.8.0 release and before the 0.8.2 release
+            // had their block hash calculated with an unknown sequencer address and thus don't match our computed
+            // value... Also, we've seen some sequencer bugs where the API returned a bogus sequencer_address
+            // for old blocks that had their block hashes computed with zero as the sequencer address.
+            let computed_block_hash = compute_block_hash(&block)?;
+            if let Some(block_hash) = block.block_hash {
+                if block_hash != computed_block_hash {
+                    let block_number = block.block_number.unwrap();
+                    tracing::warn!(
+                        ?block_number,
+                        ?block_hash,
+                        ?computed_block_hash,
+                        "Block hash mismatch"
+                    );
+                }
+            }
+            Ok(DownloadBlock::Block(Box::new(block)))
+        }
         Err(SequencerError::StarknetError(err)) if err.code == BlockNotFound => {
             // This would occur if we queried past the head of the chain. We now need to check that
             // a reorg hasn't put us too far in the future. This does run into race conditions with
