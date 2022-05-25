@@ -288,4 +288,23 @@ mod tests {
         let block_hash = compute_block_hash(&block).unwrap();
         assert_eq!(block.block_hash.unwrap(), block_hash);
     }
+
+    #[test]
+    fn test_block_hash_with_sequencer_address_unavailable_but_not_zero() {
+        use crate::sequencer::reply::Block;
+
+        // FIXME: This tests with a pre-0.8.0 block where zero is used as the sequencer address.
+        // We should update compute_block_hash() once we have sequencer addresses in the block.
+        let json = include_bytes!("../../resources/block_156000.json");
+        let mut block: Block = serde_json::from_slice(json).unwrap();
+        block.sequencer_address = Some(SequencerAddress(
+            StarkHash::from_hex_str(
+                "0x46A89AE102987331D369645031B49C27738ED096F2789C24449966DA4C6DE6B",
+            )
+            .unwrap(),
+        ));
+
+        let block_hash = compute_block_hash(&block).unwrap();
+        assert_eq!(block.block_hash.unwrap(), block_hash);
+    }
 }
