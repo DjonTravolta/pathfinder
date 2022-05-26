@@ -7,13 +7,10 @@ from starkware.starknet.services.api.feeder_gateway.block_hash import (
     calculate_event_hash,
     calculate_single_tx_hash_with_signature,
     calculate_patricia_root,
+    calculate_block_hash,
 )
 from starkware.starknet.services.api.feeder_gateway.response_objects import (
     StarknetBlock,
-)
-from starkware.starknet.services.api.feeder_gateway.block_hash import (
-    calculate_block_hash,
-    calculate_event_hash,
 )
 from starkware.storage.storage import FactFetchingContext
 from starkware.storage.dict_storage import DictStorage
@@ -90,7 +87,7 @@ def main():
                 parent_hash=block.parent_block_hash,
                 block_number=block.block_number,
                 global_state_root=block.state_root,
-                sequencer_address=0x46A89AE102987331D369645031B49C27738ED096F2789C24449966DA4C6DE6B,
+                sequencer_address=block.sequencer_address or 0,
                 block_timestamp=block.timestamp,
                 tx_hashes=tx_hashes,
                 tx_signatures=tx_signatures,
