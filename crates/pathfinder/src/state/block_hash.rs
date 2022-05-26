@@ -9,6 +9,18 @@ use crate::sequencer::reply::{
 };
 use crate::state::merkle_tree::MerkleTree;
 
+/// Compute the block hash value.
+///
+/// The method to compute the block hash is documented here:
+/// <https://docs.starknet.io/docs/Blocks/header/#block-hash>
+///
+/// Unfortunately that'a not-fully-correct description, since the transaction
+/// commitment Merkle tree is not constructed directly with the transaction
+/// hashes, but with a hash computed from the transaction hash and the signature
+/// values (for invoke transactions).
+///
+/// See the `block_hash.py` helper script that uses the cairo-lang Python
+/// implementation to compute the block hash for details.
 pub fn compute_block_hash(block: &Block) -> Result<StarknetBlockHash> {
     let transaction_commitment = calculate_transaction_commitment(&block.transactions)?;
     let event_commitment = calculate_event_commitment(&block.transaction_receipts)?;
@@ -18,9 +30,13 @@ pub fn compute_block_hash(block: &Block) -> Result<StarknetBlockHash> {
     anyhow::ensure!(block.state_root.is_some());
     let state_root = block.state_root.unwrap();
 
-    let num_transactions: u64 = block.transactions.len().try_into()?;
+    let num_transactions: u64 = block
+        .transactions
+        .len()
+        .try_into()
+        .expect("too many transactions in block");
     let num_events = number_of_events_in_block(block);
-    let num_events: u64 = num_events.try_into()?;
+    let num_events: u64 = num_events.try_into().expect("too many events in block");
 
     let sequencer_address = block
         .sequencer_address
@@ -56,6 +72,13 @@ pub fn compute_block_hash(block: &Block) -> Result<StarknetBlockHash> {
     Ok(StarknetBlockHash(block_hash))
 }
 
+/// A Patricia Merkle tree with height 64 used to compute transaction and event commitments.
+///
+/// According to the [documentation](https://docs.starknet.io/docs/Blocks/header/#block-header)
+/// the commitment trees are of height 64, because the key used is the 64 bit representation
+/// of the index of the transaction / event within the block.
+///
+/// The tree height is 64 in our case since our set operation takes u64 index values.
 #[derive(Default)]
 struct CommitmentTree {
     tree: MerkleTree<()>,
@@ -72,6 +95,11 @@ impl CommitmentTree {
     }
 }
 
+/// Calculate transaction commitment hash value.
+///
+/// The transaction commitment is the root of the Patricia Merkle tree with height 64
+/// constructed by adding the (transaction_index, transaction_hash_with_signature)
+/// key-value pairs to the tree and computing the root hash.
 fn calculate_transaction_commitment(transactions: &[Transaction]) -> Result<StarkHash> {
     let mut tree = CommitmentTree::default();
 
@@ -89,6 +117,15 @@ fn calculate_transaction_commitment(transactions: &[Transaction]) -> Result<Star
     tree.commit()
 }
 
+/// Compute the combined hash of the transaction hash and the signature.
+///
+/// Since the transaction hash doesn't take the signature values as its input
+/// computing the transaction commitent uses a hash value that combines
+/// the transaction hash with the array of signature values.
+///
+/// Note that for deploy transactions we don't actually have signatures. The
+/// cairo-lang uses an empty list (whose hash is not the ZERO value!) in that
+/// case.
 fn calculate_transaction_hash_with_signature(tx: &Transaction) -> StarkHash {
     lazy_static::lazy_static!(
         static ref HASH_OF_EMPTY_LIST: StarkHash = stark_hash_of_array([].into_iter());
@@ -102,6 +139,11 @@ fn calculate_transaction_hash_with_signature(tx: &Transaction) -> StarkHash {
     stark_hash(tx.transaction_hash.0, signature_hash)
 }
 
+/// Calculate event commitment hash value.
+///
+/// The event commitment is the root of the Patricia Merkle tree with height 64
+/// constructed by adding the (event_index, event_hash) key-value pairs to the
+/// tree and computing the root hash.
 fn calculate_event_commitment(transaction_receipts: &[Receipt]) -> Result<StarkHash> {
     let mut tree = CommitmentTree::default();
 
@@ -120,6 +162,10 @@ fn calculate_event_commitment(transaction_receipts: &[Receipt]) -> Result<StarkH
     tree.commit()
 }
 
+/// Calculate the hash of an event.
+///
+/// See the [documentation](https://docs.starknet.io/docs/Events/starknet-events#event-hash)
+/// for details.
 fn calculate_event_hash(event: &Event) -> StarkHash {
     let keys_hash = stark_hash_of_array(event.keys.iter().map(|key| key.0));
     let data_hash = stark_hash_of_array(event.data.iter().map(|data| data.0));
@@ -127,6 +173,12 @@ fn calculate_event_hash(event: &Event) -> StarkHash {
     stark_hash_of_array([event.from_address.0, keys_hash, data_hash].into_iter())
 }
 
+/// Calculate the hash of a sequence of field elements.
+///
+/// See the [documentation](https://docs.starknet.io/docs/Hashing/hash-functions#array-hashing)
+/// for details.
+///
+/// This is equivalent to what [crate::state::contract_hash::HashChain] does.
 fn stark_hash_of_array<T: Iterator<Item = StarkHash>>(elements: T) -> StarkHash {
     // the hash of an array of length n is defined as h(...h((h(0,a1),a2),...,an),n)
     let (count, hash) = elements.fold((0u64, StarkHash::ZERO), |(count, hash), x| {
@@ -136,6 +188,7 @@ fn stark_hash_of_array<T: Iterator<Item = StarkHash>>(elements: T) -> StarkHash 
     stark_hash(hash, count)
 }
 
+/// Return the number of events in the block.
 fn number_of_events_in_block(block: &Block) -> usize {
     block
         .transaction_receipts
@@ -255,7 +308,7 @@ mod tests {
     fn test_number_of_events_in_block() {
         use crate::sequencer::reply::Block;
 
-        let json = include_bytes!("../../resources/block_156000.json");
+        let json = include_bytes!("../../fixtures/blocks/block_156000.json");
         let block: Block = serde_json::from_slice(json).unwrap();
 
         // this expected value comes from processing the raw JSON and counting the number of events
@@ -267,9 +320,8 @@ mod tests {
     fn test_block_hash_without_sequencer_address() {
         use crate::sequencer::reply::Block;
 
-        // FIXME: This tests with a pre-0.8.0 block where zero is used as the sequencer address.
-        // We should update compute_block_hash() once we have sequencer addresses in the block.
-        let json = include_bytes!("../../resources/block_73653.json");
+        // This tests with a pre-0.8.0 block where zero is used as the sequencer address.
+        let json = include_bytes!("../../fixtures/blocks/block_73653.json");
         let block: Block = serde_json::from_slice(json).unwrap();
 
         let block_hash = compute_block_hash(&block).unwrap();
@@ -280,9 +332,9 @@ mod tests {
     fn test_block_hash_with_sequencer_address() {
         use crate::sequencer::reply::Block;
 
-        // FIXME: This tests with a pre-0.8.0 block where zero is used as the sequencer address.
-        // We should update compute_block_hash() once we have sequencer addresses in the block.
-        let json = include_bytes!("../../resources/block_186109.json");
+        // This tests with a post-0.8.2 block where we have correct sequencer address
+        // information in the block itself.
+        let json = include_bytes!("../../fixtures/blocks/block_186109.json");
         let block: Block = serde_json::from_slice(json).unwrap();
 
         let block_hash = compute_block_hash(&block).unwrap();
@@ -293,9 +345,10 @@ mod tests {
     fn test_block_hash_with_sequencer_address_unavailable_but_not_zero() {
         use crate::sequencer::reply::Block;
 
-        // FIXME: This tests with a pre-0.8.0 block where zero is used as the sequencer address.
-        // We should update compute_block_hash() once we have sequencer addresses in the block.
-        let json = include_bytes!("../../resources/block_156000.json");
+        // This tests with a post-0.8.0 pre-0.8.2 block where we don't have the sequencer
+        // address in the JSON but the block hash was calculated with the magic value below
+        // instead of zero.
+        let json = include_bytes!("../../fixtures/blocks/block_156000.json");
         let mut block: Block = serde_json::from_slice(json).unwrap();
         block.sequencer_address = Some(SequencerAddress(
             StarkHash::from_hex_str(
