@@ -107,7 +107,9 @@ fn calculate_transaction_commitment(transactions: &[Transaction]) -> Result<Star
         .iter()
         .enumerate()
         .try_for_each(|(idx, tx)| {
-            let idx: u64 = idx.try_into()?;
+            let idx: u64 = idx
+                .try_into()
+                .expect("too many transactions while calculating commitment");
             let final_hash = calculate_transaction_hash_with_signature(tx);
             tree.set(idx, final_hash)?;
             Result::<_, Error>::Ok(())
