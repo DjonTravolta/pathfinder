@@ -1,4 +1,3 @@
-from distutils.command.build import build
 import sys
 import asyncio
 
@@ -16,15 +15,32 @@ from starkware.starknet.definitions.general_config import default_general_config
 from starkware.starknet.definitions.transaction_type import TransactionType
 
 
-def main():
-
+def print_test_event_hash_value():
+    """
+    Used to generate the expected value used in the "test_event_hash" test case.
+    """
     print(hex(calculate_event_hash(0xdeadbeef, [1, 2, 3, 4], [5, 6, 7, 8, 9])))
 
-    print(hex(compute_hash_on_elements([1, 2, 3, 4])))
 
+def print_transaction_hash_with_signature():
+    """
+    Used to generate the expected value used in the "test_final_transaction_hash" test case.
+    """
     print(hex(calculate_single_tx_hash_with_signature(
         1, [2, 3], hash_function=pedersen_hash)))
 
+
+def print_hash_on_elements():
+    """
+    Used to generate the expected value used in the "test_compute_hash_on_elements" test case.
+    """
+    print(hex(compute_hash_on_elements([1, 2, 3, 4])))
+
+
+def print_patricia_root_for_commitment_tree():
+    """
+    Used to generate the expected value used in the "test_commitment_merkle_tree" test case.
+    """
     def bytes_hash_function(x: bytes, y: bytes) -> bytes:
         return to_bytes(pedersen_hash(from_bytes(x), from_bytes(y)))
 
@@ -35,7 +51,12 @@ def main():
         [1, 2, 3, 4], height=64, ffc=ffc))
     print(hex(root))
 
-    with open(sys.argv[1]) as f:
+
+def main():
+    """
+    Given a file containing the JSON block compute the block hash using the `cairo-lang` implementation.
+    """
+    with open(sys.argv[1], encoding="utf-8") as f:
         general_config = build_general_config(default_general_config)
         block = StarknetBlock.loads(f.read())
         tx_hashes = [tx.transaction_hash for tx in block.transactions]
