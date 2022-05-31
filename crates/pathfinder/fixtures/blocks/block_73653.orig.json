@@ -1,0 +1,671 @@
+{
+  "block_hash": "0x1211eb295d1ea719c89232d154b8c839f0fff5f7e15a3aa2595ab2e9b14a0a6",
+  "block_number": 73653,
+  "parent_block_hash": "0x33a2e0f466482362bb040ddf4af6a10cf282e7811da475ab1dbb106348b2e9b",
+  "state_root": "0611ca631fa2094b6de9c593e4753739435101fff175c8befbe8eb880010faef",
+  "status": "ACCEPTED_ON_L1",
+  "timestamp": 1645234497,
+  "transaction_receipts": [
+    {
+      "events": [],
+      "execution_resources": {
+        "builtin_instance_counter": {
+          "bitwise_builtin": 0,
+          "ec_op_builtin": 0,
+          "ecdsa_builtin": 1,
+          "output_builtin": 0,
+          "pedersen_builtin": 12,
+          "range_check_builtin": 7
+        },
+        "n_memory_holes": 11,
+        "n_steps": 589
+      },
+      "l2_to_l1_messages": [],
+      "transaction_hash": "0x61c7d0d8d8cd4b031e7dcfe6a3286001e41c3c77add9967a5eb1368c5fed500",
+      "transaction_index": 0
+    },
+    {
+      "events": [
+        {
+          "data": [
+            "0x6980dac5b69407e1087",
+            "0x0",
+            "0x4efaa0a107d0b12ff831407",
+            "0x0"
+          ],
+          "from_address": "0x3c2c913814a594de73f60277baf03ddafcaa30c4a6ad515bea7f513d6c19aad",
+          "keys": [
+            "0xe14a408baf7f453312eec68e9b7d728ec5337fbdf671f917ee8c80f3255232"
+          ]
+        },
+        {
+          "data": [
+            "0x42426b8af6cfdefba38684677968f7674a24f8fd161e52b8b5f5b481d522366",
+            "0x0",
+            "0x0",
+            "0x1b1ae4d6e2ef500000",
+            "0x0",
+            "0x241972cbd059e0",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x2453f0d8847802115abc5620001df7ec64a3ac833969ef2c44013fb8dcefc6e"
+          ],
+          "from_address": "0x3c2c913814a594de73f60277baf03ddafcaa30c4a6ad515bea7f513d6c19aad",
+          "keys": [
+            "0xe316f0d9d2a3affa97de1d99bb2aac0538e2666d0d8545545ead241ef0ccab"
+          ]
+        }
+      ],
+      "execution_resources": {
+        "builtin_instance_counter": {
+          "bitwise_builtin": 0,
+          "ec_op_builtin": 0,
+          "ecdsa_builtin": 1,
+          "output_builtin": 0,
+          "pedersen_builtin": 36,
+          "range_check_builtin": 657
+        },
+        "n_memory_holes": 206,
+        "n_steps": 9409
+      },
+      "l2_to_l1_messages": [],
+      "transaction_hash": "0x4551050c9b0c79c1a185358b2f218e85b4fa3292d791c41cfcd11ebdda9f501",
+      "transaction_index": 1
+    },
+    {
+      "events": [],
+      "execution_resources": {
+        "builtin_instance_counter": {
+          "bitwise_builtin": 0,
+          "ec_op_builtin": 0,
+          "ecdsa_builtin": 1,
+          "output_builtin": 0,
+          "pedersen_builtin": 12,
+          "range_check_builtin": 7
+        },
+        "n_memory_holes": 11,
+        "n_steps": 589
+      },
+      "l2_to_l1_messages": [],
+      "transaction_hash": "0x4631e9a3fdab1bfad20b61110935b8d9e0c454a762020f2636aff73031851f2",
+      "transaction_index": 2
+    },
+    {
+      "events": [],
+      "execution_resources": {
+        "builtin_instance_counter": {
+          "bitwise_builtin": 0,
+          "ec_op_builtin": 0,
+          "ecdsa_builtin": 0,
+          "output_builtin": 0,
+          "pedersen_builtin": 0,
+          "range_check_builtin": 0
+        },
+        "n_memory_holes": 0,
+        "n_steps": 178
+      },
+      "l2_to_l1_messages": [],
+      "transaction_hash": "0xaadbb777b5bf68035f0d163a098d9e875cde5263d617ab9825a1bb8245916a",
+      "transaction_index": 3
+    },
+    {
+      "events": [],
+      "execution_resources": {
+        "builtin_instance_counter": {
+          "bitwise_builtin": 0,
+          "ec_op_builtin": 0,
+          "ecdsa_builtin": 1,
+          "output_builtin": 0,
+          "pedersen_builtin": 12,
+          "range_check_builtin": 14
+        },
+        "n_memory_holes": 20,
+        "n_steps": 756
+      },
+      "l2_to_l1_messages": [],
+      "transaction_hash": "0x4e31ff0ecea1179c619f98d0f66a55553628348114ea5e6826af33a2c2ae0cb",
+      "transaction_index": 4
+    },
+    {
+      "events": [],
+      "execution_resources": {
+        "builtin_instance_counter": {
+          "bitwise_builtin": 0,
+          "ec_op_builtin": 0,
+          "ecdsa_builtin": 1,
+          "output_builtin": 0,
+          "pedersen_builtin": 12,
+          "range_check_builtin": 7
+        },
+        "n_memory_holes": 11,
+        "n_steps": 589
+      },
+      "l2_to_l1_messages": [],
+      "transaction_hash": "0x352d630259e237d1c9df261acdd7f9dfaf4fa43a0f849cb2f506e509d928b85",
+      "transaction_index": 5
+    },
+    {
+      "events": [],
+      "execution_resources": {
+        "builtin_instance_counter": {
+          "bitwise_builtin": 0,
+          "ec_op_builtin": 0,
+          "ecdsa_builtin": 1,
+          "output_builtin": 0,
+          "pedersen_builtin": 12,
+          "range_check_builtin": 7
+        },
+        "n_memory_holes": 11,
+        "n_steps": 589
+      },
+      "l2_to_l1_messages": [],
+      "transaction_hash": "0x2f0e94fb43f1fdef8e15f8094d7464c7901515b969fb843ec03fc9ae8568531",
+      "transaction_index": 6
+    },
+    {
+      "events": [
+        {
+          "data": [
+            "0x49d04c23daad731c460a07f428c9a9e03f1a96dab35c61a80cb13f8e030941d",
+            "0x0",
+            "0x89d",
+            "0x0"
+          ],
+          "from_address": "0x4e34321e0bce0e4ff8ff0bcb3a9a030d423bca29a9d99cbcdd60edb9a2bf03a",
+          "keys": [
+            "0x1744f73ac510aced35a20ef86473bc34529de321fe2acb1b906e8c1f98b059e"
+          ]
+        },
+        {
+          "data": [
+            "0x49d04c23daad731c460a07f428c9a9e03f1a96dab35c61a80cb13f8e030941d",
+            "0x20aa75a714e194e6d0222ee666453f2f62217024d97325207e2ae5f689ce2eb",
+            "0x89d",
+            "0x0"
+          ],
+          "from_address": "0x4e34321e0bce0e4ff8ff0bcb3a9a030d423bca29a9d99cbcdd60edb9a2bf03a",
+          "keys": [
+            "0x99cd8bde557814842a3121e8ddfd433a539b8c9f14bf31ebf108d12e6196e9"
+          ]
+        },
+        {
+          "data": [
+            "0x1353ad56e7eba3bedf387fbc67a2890c9443f0fbab77fde515590f34840d6fa",
+            "0x5",
+            "0x20aa75a714e194e6d0222ee666453f2f62217024d97325207e2ae5f689ce2eb",
+            "0x49d04c23daad731c460a07f428c9a9e03f1a96dab35c61a80cb13f8e030941d",
+            "0x4e34321e0bce0e4ff8ff0bcb3a9a030d423bca29a9d99cbcdd60edb9a2bf03a",
+            "0x89d",
+            "0x0",
+            "0x7394cbe418daa16e42b87ba67372d4ab4a5df0b05c6e554d158458ce245bc10",
+            "0x8ac7230489e80000",
+            "0x0",
+            "0x0",
+            "0x7a6203526586",
+            "0x0",
+            "0x0",
+            "0x1353ad56e7eba3bedf387fbc67a2890c9443f0fbab77fde515590f34840d6fa",
+            "0x5",
+            "0x49d04c23daad731c460a07f428c9a9e03f1a96dab35c61a80cb13f8e030941d",
+            "0x0",
+            "0x4e34321e0bce0e4ff8ff0bcb3a9a030d423bca29a9d99cbcdd60edb9a2bf03a",
+            "0x89d",
+            "0x0",
+            "0x7394cbe418daa16e42b87ba67372d4ab4a5df0b05c6e554d158458ce245bc10",
+            "0x8ac7230489e80000",
+            "0x0",
+            "0x1",
+            "0x520b8974224a",
+            "0x7813c8031a272df065ddda2f767309d012c23d70e7533b2a9505aa68778b413",
+            "0x333241e91da5304f635ad678ac440c94999d6c9c1dc2512e5bb3f173de9a0b2"
+          ],
+          "from_address": "0x1353ad56e7eba3bedf387fbc67a2890c9443f0fbab77fde515590f34840d6fa",
+          "keys": [
+            "0x3ea131a65e43b0f29864c3846e914a472799b56a7141e81087339e1912e306f"
+          ]
+        }
+      ],
+      "execution_resources": {
+        "builtin_instance_counter": {
+          "bitwise_builtin": 0,
+          "ec_op_builtin": 0,
+          "ecdsa_builtin": 2,
+          "output_builtin": 0,
+          "pedersen_builtin": 157,
+          "range_check_builtin": 114
+        },
+        "n_memory_holes": 213,
+        "n_steps": 5082
+      },
+      "l2_to_l1_messages": [],
+      "transaction_hash": "0x74092e53f99e21d18faa039c21baf6311f390bdc15185a0cfd826d2d20d67c4",
+      "transaction_index": 7
+    },
+    {
+      "events": [],
+      "execution_resources": {
+        "builtin_instance_counter": {
+          "bitwise_builtin": 0,
+          "ec_op_builtin": 0,
+          "ecdsa_builtin": 1,
+          "output_builtin": 0,
+          "pedersen_builtin": 12,
+          "range_check_builtin": 7
+        },
+        "n_memory_holes": 12,
+        "n_steps": 587
+      },
+      "l2_to_l1_messages": [],
+      "transaction_hash": "0x32ff7aeb4a5a779a2fecf25dfebc871e0b98dacff1d422929b67a5392186f57",
+      "transaction_index": 8
+    },
+    {
+      "events": [],
+      "execution_resources": {
+        "builtin_instance_counter": {
+          "bitwise_builtin": 0,
+          "ec_op_builtin": 0,
+          "ecdsa_builtin": 1,
+          "output_builtin": 0,
+          "pedersen_builtin": 12,
+          "range_check_builtin": 7
+        },
+        "n_memory_holes": 12,
+        "n_steps": 587
+      },
+      "l2_to_l1_messages": [],
+      "transaction_hash": "0x74a5fb8fb171ee488f693daeddebd2a7ecc8e99b48d4ca16c4c9a19c76d0893",
+      "transaction_index": 9
+    },
+    {
+      "events": [],
+      "execution_resources": {
+        "builtin_instance_counter": {
+          "bitwise_builtin": 0,
+          "ec_op_builtin": 0,
+          "ecdsa_builtin": 1,
+          "output_builtin": 0,
+          "pedersen_builtin": 12,
+          "range_check_builtin": 7
+        },
+        "n_memory_holes": 12,
+        "n_steps": 587
+      },
+      "l2_to_l1_messages": [],
+      "transaction_hash": "0x74145713fd0f8569520250acee2e7702885e907daa409aac25b3a0ac771714f",
+      "transaction_index": 10
+    },
+    {
+      "events": [
+        {
+          "data": [
+            "0x6980d8841f80088b16b",
+            "0x0",
+            "0x4efaa252b61e1f5eed31407",
+            "0x0"
+          ],
+          "from_address": "0x3c2c913814a594de73f60277baf03ddafcaa30c4a6ad515bea7f513d6c19aad",
+          "keys": [
+            "0xe14a408baf7f453312eec68e9b7d728ec5337fbdf671f917ee8c80f3255232"
+          ]
+        },
+        {
+          "data": [
+            "0x42426b8af6cfdefba38684677968f7674a24f8fd161e52b8b5f5b481d522366",
+            "0x0",
+            "0x0",
+            "0x1b1ae4d6e2ef500000",
+            "0x0",
+            "0x2419713ff55f1c",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x45af632104aa53ba833e0b3f6042a96844e3f4bf0ed06dd5200a20e25d214d"
+          ],
+          "from_address": "0x3c2c913814a594de73f60277baf03ddafcaa30c4a6ad515bea7f513d6c19aad",
+          "keys": [
+            "0xe316f0d9d2a3affa97de1d99bb2aac0538e2666d0d8545545ead241ef0ccab"
+          ]
+        }
+      ],
+      "execution_resources": {
+        "builtin_instance_counter": {
+          "bitwise_builtin": 0,
+          "ec_op_builtin": 0,
+          "ecdsa_builtin": 1,
+          "output_builtin": 0,
+          "pedersen_builtin": 36,
+          "range_check_builtin": 575
+        },
+        "n_memory_holes": 216,
+        "n_steps": 8615
+      },
+      "l2_to_l1_messages": [],
+      "transaction_hash": "0x6a312193888e458c77f81baab5204adfc328f8c4a8561671db262b5d09e0320",
+      "transaction_index": 11
+    },
+    {
+      "events": [],
+      "execution_resources": {
+        "builtin_instance_counter": {
+          "bitwise_builtin": 0,
+          "ec_op_builtin": 0,
+          "ecdsa_builtin": 1,
+          "output_builtin": 0,
+          "pedersen_builtin": 12,
+          "range_check_builtin": 7
+        },
+        "n_memory_holes": 11,
+        "n_steps": 589
+      },
+      "l2_to_l1_messages": [],
+      "transaction_hash": "0x16a4a2916fd2e4171f34c00115b323fc6668fc106820a06f4da97faae625ad0",
+      "transaction_index": 12
+    }
+  ],
+  "transactions": [
+    {
+      "calldata": [
+        "0x7394cbe418daa16e42b87ba67372d4ab4a5df0b05c6e554d158458ce245bc10",
+        "0x219209e083275171774dab1df80982e9df2096516f06319c5c6d71ae0a8480c",
+        "0x3",
+        "0x1353ad56e7eba3bedf387fbc67a2890c9443f0fbab77fde515590f34840d6fa",
+        "0xffffffffffffffffffffffffffffffff",
+        "0xffffffffffffffffffffffffffffffff",
+        "0xe"
+      ],
+      "contract_address": "0x27481f7c466cf785b370865c81dd4e975fb6fc929b628c82a1cec29365b08cc",
+      "entry_point_selector": "0x240060cdb34fcc260f41eac7474ee1d7c80b7e3607daff9ac67c7ea2ebb1c44",
+      "entry_point_type": "EXTERNAL",
+      "max_fee": "0x0",
+      "signature": [
+        "0x197dd28983dbf6c8b9c9ed775a8139266115163ca61e9cbfa9c9addedbb2ffc",
+        "0x676826dd65a7b787677853960832cb0d6ae7f3c39e230b341f3e5580205a408"
+      ],
+      "transaction_hash": "0x61c7d0d8d8cd4b031e7dcfe6a3286001e41c3c77add9967a5eb1368c5fed500",
+      "type": "INVOKE_FUNCTION"
+    },
+    {
+      "calldata": [
+        "0x42426b8af6cfdefba38684677968f7674a24f8fd161e52b8b5f5b481d522366",
+        "0x3276861cf5e05d6daf8f352cabb47df623eb10c383ab742fcc7abea94d5c5cc",
+        "0x9",
+        "0x1b1ae4d6e2ef500000",
+        "0x0",
+        "0x23eb790922b863",
+        "0x0",
+        "0x2",
+        "0x51ecf6b7831cd141391313ce417f5f50e2a2cadba553562064bcd0e78eed8d7",
+        "0x1f7b127a0870766c6651875b2a58cd39d57a99ac8cb34064523affd955c1e2",
+        "0x2453f0d8847802115abc5620001df7ec64a3ac833969ef2c44013fb8dcefc6e",
+        "0x62104d70",
+        "0x15"
+      ],
+      "contract_address": "0x2453f0d8847802115abc5620001df7ec64a3ac833969ef2c44013fb8dcefc6e",
+      "entry_point_selector": "0x240060cdb34fcc260f41eac7474ee1d7c80b7e3607daff9ac67c7ea2ebb1c44",
+      "entry_point_type": "EXTERNAL",
+      "max_fee": "0x0",
+      "signature": [
+        "0x1e84363d94541e9ef27fb79c0fda89cbe2d48cb140e7a6fdcd019bc3c45a38a",
+        "0x365f324fc1ead415184aaddd7df371fa8ba8a8243db30042d143f968bdd5e06"
+      ],
+      "transaction_hash": "0x4551050c9b0c79c1a185358b2f218e85b4fa3292d791c41cfcd11ebdda9f501",
+      "type": "INVOKE_FUNCTION"
+    },
+    {
+      "calldata": [
+        "0x7394cbe418daa16e42b87ba67372d4ab4a5df0b05c6e554d158458ce245bc10",
+        "0x219209e083275171774dab1df80982e9df2096516f06319c5c6d71ae0a8480c",
+        "0x3",
+        "0x71faa7d6c3ddb081395574c5a6904f4458ff648b66e2123b877555d9ae0260e",
+        "0x80000000000000000000000000000000",
+        "0x0",
+        "0x2"
+      ],
+      "contract_address": "0xe89f7311a36cd7378fa258db73ef6ef80fc9e6230c9cb282dea8a0aa89fdf5",
+      "entry_point_selector": "0x240060cdb34fcc260f41eac7474ee1d7c80b7e3607daff9ac67c7ea2ebb1c44",
+      "entry_point_type": "EXTERNAL",
+      "max_fee": "0x0",
+      "signature": [
+        "0x7d35515377be0cea8e8644338e420a029419f53198949b648955a91b4463f13",
+        "0x6e56b4e5c495f10b3ef2ec3d16b5b743f1d71bd607f383345505d3ad425073e"
+      ],
+      "transaction_hash": "0x4631e9a3fdab1bfad20b61110935b8d9e0c454a762020f2636aff73031851f2",
+      "type": "INVOKE_FUNCTION"
+    },
+    {
+      "calldata": [
+        "0x60dc71db6921da295a83f03d68dcfdc2b79b9871053886fcfe47e221ab2065a",
+        "0x5d3b80d115df8c4ac3b4e528e3230e23e0b2ec83d31a98c06257e5186cce9ea"
+      ],
+      "contract_address": "0x4fd65b6bdcc9224c4e91be212172ba765796b0a8e0cb1798dc5c540ccd8d348",
+      "entry_point_selector": "0x19a35a6e95cb7a3318dbb244f20975a1cd8587cc6b5259f15f61d7beb7ee43b",
+      "entry_point_type": "EXTERNAL",
+      "max_fee": "0x0",
+      "signature": [],
+      "transaction_hash": "0xaadbb777b5bf68035f0d163a098d9e875cde5263d617ab9825a1bb8245916a",
+      "type": "INVOKE_FUNCTION"
+    },
+    {
+      "calldata": [
+        "0x7394cbe418daa16e42b87ba67372d4ab4a5df0b05c6e554d158458ce245bc10",
+        "0x2f0b3c5710379609eb5495f1ecd348cb28167711b73609fe565a72734550354",
+        "0x3",
+        "0x2fa4f9bbc6f982ecdaee1452a521b896472fb7aff3ba62a2e2303489dd29503",
+        "0x3635c9adc5dea00000",
+        "0x0",
+        "0x0"
+      ],
+      "contract_address": "0x2fa4f9bbc6f982ecdaee1452a521b896472fb7aff3ba62a2e2303489dd29503",
+      "entry_point_selector": "0x240060cdb34fcc260f41eac7474ee1d7c80b7e3607daff9ac67c7ea2ebb1c44",
+      "entry_point_type": "EXTERNAL",
+      "max_fee": "0x0",
+      "signature": [
+        "0x36f036f98ecaf4192e694c2f247028c2a001dfe62194e3c29b9feea896aaa33",
+        "0x48527a0f70ba9a347075e25e75bf70569179c72e4dc6d39f9be8f0968d93169"
+      ],
+      "transaction_hash": "0x4e31ff0ecea1179c619f98d0f66a55553628348114ea5e6826af33a2c2ae0cb",
+      "type": "INVOKE_FUNCTION"
+    },
+    {
+      "calldata": [
+        "0x7394cbe418daa16e42b87ba67372d4ab4a5df0b05c6e554d158458ce245bc10",
+        "0x219209e083275171774dab1df80982e9df2096516f06319c5c6d71ae0a8480c",
+        "0x3",
+        "0x1353ad56e7eba3bedf387fbc67a2890c9443f0fbab77fde515590f34840d6fa",
+        "0xffffffffffffffffffffffffffffffff",
+        "0xffffffffffffffffffffffffffffffff",
+        "0xe"
+      ],
+      "contract_address": "0x1554df7e981e0e41eaca094e20b7ba57cb831e25972abb69308189ac75a7ac3",
+      "entry_point_selector": "0x240060cdb34fcc260f41eac7474ee1d7c80b7e3607daff9ac67c7ea2ebb1c44",
+      "entry_point_type": "EXTERNAL",
+      "max_fee": "0x0",
+      "signature": [
+        "0x5c588573d9814ecf839b43c3210ecb401a6bf2f05b23991541da949597eb4c9",
+        "0x36fadb62b67357561a04cb96095584145ca919619ff4f682df6f88dd970a01a"
+      ],
+      "transaction_hash": "0x352d630259e237d1c9df261acdd7f9dfaf4fa43a0f849cb2f506e509d928b85",
+      "type": "INVOKE_FUNCTION"
+    },
+    {
+      "calldata": [
+        "0x51ecf6b7831cd141391313ce417f5f50e2a2cadba553562064bcd0e78eed8d7",
+        "0x219209e083275171774dab1df80982e9df2096516f06319c5c6d71ae0a8480c",
+        "0x3",
+        "0x42426b8af6cfdefba38684677968f7674a24f8fd161e52b8b5f5b481d522366",
+        "0x1a055690d9db80000",
+        "0x0",
+        "0x3"
+      ],
+      "contract_address": "0x37f32b4be9b3232596e880f2302c1ee1d11b47585575a8b38e9bf34598ff527",
+      "entry_point_selector": "0x240060cdb34fcc260f41eac7474ee1d7c80b7e3607daff9ac67c7ea2ebb1c44",
+      "entry_point_type": "EXTERNAL",
+      "max_fee": "0x0",
+      "signature": [
+        "0x9e03fada342728dd307e92f7378069863bfa0b075025cd3a54570797a19b5e",
+        "0x1e67cee7a4ff5474f10db0d456a69060496cfef55917bb45cc902ef8f308660"
+      ],
+      "transaction_hash": "0x2f0e94fb43f1fdef8e15f8094d7464c7901515b969fb843ec03fc9ae8568531",
+      "type": "INVOKE_FUNCTION"
+    },
+    {
+      "calldata": [
+        "0x1353ad56e7eba3bedf387fbc67a2890c9443f0fbab77fde515590f34840d6fa",
+        "0x268807d1f4dc7e9cca40d124871328085aa5e9200b7972afd718f89da9a9cd6",
+        "0x1c",
+        "0x1353ad56e7eba3bedf387fbc67a2890c9443f0fbab77fde515590f34840d6fa",
+        "0x5",
+        "0x20aa75a714e194e6d0222ee666453f2f62217024d97325207e2ae5f689ce2eb",
+        "0x49d04c23daad731c460a07f428c9a9e03f1a96dab35c61a80cb13f8e030941d",
+        "0x4e34321e0bce0e4ff8ff0bcb3a9a030d423bca29a9d99cbcdd60edb9a2bf03a",
+        "0x89d",
+        "0x0",
+        "0x7394cbe418daa16e42b87ba67372d4ab4a5df0b05c6e554d158458ce245bc10",
+        "0x8ac7230489e80000",
+        "0x0",
+        "0x0",
+        "0x7a6203526586",
+        "0x0",
+        "0x0",
+        "0x1353ad56e7eba3bedf387fbc67a2890c9443f0fbab77fde515590f34840d6fa",
+        "0x5",
+        "0x49d04c23daad731c460a07f428c9a9e03f1a96dab35c61a80cb13f8e030941d",
+        "0x0",
+        "0x4e34321e0bce0e4ff8ff0bcb3a9a030d423bca29a9d99cbcdd60edb9a2bf03a",
+        "0x89d",
+        "0x0",
+        "0x7394cbe418daa16e42b87ba67372d4ab4a5df0b05c6e554d158458ce245bc10",
+        "0x8ac7230489e80000",
+        "0x0",
+        "0x1",
+        "0x520b8974224a",
+        "0x7813c8031a272df065ddda2f767309d012c23d70e7533b2a9505aa68778b413",
+        "0x333241e91da5304f635ad678ac440c94999d6c9c1dc2512e5bb3f173de9a0b2",
+        "0xa"
+      ],
+      "contract_address": "0x20aa75a714e194e6d0222ee666453f2f62217024d97325207e2ae5f689ce2eb",
+      "entry_point_selector": "0x240060cdb34fcc260f41eac7474ee1d7c80b7e3607daff9ac67c7ea2ebb1c44",
+      "entry_point_type": "EXTERNAL",
+      "max_fee": "0x0",
+      "signature": [
+        "0x2b9352211a00f18a5035cc14370b771ee01265a94099e14ef16fa933251da3b",
+        "0x3121100b8c5b9aa9a5e77c7157620005f38e0ff7253212a5bf330d2ee595086"
+      ],
+      "transaction_hash": "0x74092e53f99e21d18faa039c21baf6311f390bdc15185a0cfd826d2d20d67c4",
+      "type": "INVOKE_FUNCTION"
+    },
+    {
+      "calldata": [
+        "0x7394cbe418daa16e42b87ba67372d4ab4a5df0b05c6e554d158458ce245bc10",
+        "0x219209e083275171774dab1df80982e9df2096516f06319c5c6d71ae0a8480c",
+        "0x3",
+        "0x1353ad56e7eba3bedf387fbc67a2890c9443f0fbab77fde515590f34840d6fa",
+        "0xffffffffffffffffffffffffffffffff",
+        "0xffffffffffffffffffffffffffffffff",
+        "0xd"
+      ],
+      "contract_address": "0x706053bddd2c287277c380a43150895075949b5552b1fbe0376fa61684d4ad0",
+      "entry_point_selector": "0x240060cdb34fcc260f41eac7474ee1d7c80b7e3607daff9ac67c7ea2ebb1c44",
+      "entry_point_type": "EXTERNAL",
+      "max_fee": "0x0",
+      "signature": [
+        "0x6d1ef39c5a516d7b5fed0e0f4a6363ee86c8ef7b04624cadfcfcb1b7518ba74",
+        "0x3a99c0e8fa1a1482aa86c3cfde7a171835f9637f0af54f2dd889eb4e34a2edd"
+      ],
+      "transaction_hash": "0x32ff7aeb4a5a779a2fecf25dfebc871e0b98dacff1d422929b67a5392186f57",
+      "type": "INVOKE_FUNCTION"
+    },
+    {
+      "calldata": [
+        "0x51ecf6b7831cd141391313ce417f5f50e2a2cadba553562064bcd0e78eed8d7",
+        "0x219209e083275171774dab1df80982e9df2096516f06319c5c6d71ae0a8480c",
+        "0x3",
+        "0x42426b8af6cfdefba38684677968f7674a24f8fd161e52b8b5f5b481d522366",
+        "0x3e5774bb09f33857f0",
+        "0x0",
+        "0x4f8"
+      ],
+      "contract_address": "0x1f438626b21368e3bec6114aa36f8e3b5cff60e4601ff9a808f644305398e10",
+      "entry_point_selector": "0x240060cdb34fcc260f41eac7474ee1d7c80b7e3607daff9ac67c7ea2ebb1c44",
+      "entry_point_type": "EXTERNAL",
+      "max_fee": "0x0",
+      "signature": [
+        "0x1fed550478307f62ace062b417cfc43896dea7d39db24e563713591744a87d",
+        "0x35b1ec2d9636ed52990e5cfc756c715d3b945490c9797cf3c653f3f4e938ad8"
+      ],
+      "transaction_hash": "0x74a5fb8fb171ee488f693daeddebd2a7ecc8e99b48d4ca16c4c9a19c76d0893",
+      "type": "INVOKE_FUNCTION"
+    },
+    {
+      "calldata": [
+        "0x7394cbe418daa16e42b87ba67372d4ab4a5df0b05c6e554d158458ce245bc10",
+        "0x219209e083275171774dab1df80982e9df2096516f06319c5c6d71ae0a8480c",
+        "0x3",
+        "0x71faa7d6c3ddb081395574c5a6904f4458ff648b66e2123b877555d9ae0260e",
+        "0x80000000000000000000000000000000",
+        "0x0",
+        "0x1"
+      ],
+      "contract_address": "0x2628b04fe246f897147e0ec59bcf40cb46adc97f56bed42a3734c2096349831",
+      "entry_point_selector": "0x240060cdb34fcc260f41eac7474ee1d7c80b7e3607daff9ac67c7ea2ebb1c44",
+      "entry_point_type": "EXTERNAL",
+      "max_fee": "0x0",
+      "signature": [
+        "0x138aba820536f873bcbf49a1536e3b682b8e0a40208d68a04f66a318a14bf29",
+        "0x758cdd53bfe1b60e09807b7c4f91245beac551160fa69136d94077c15477add"
+      ],
+      "transaction_hash": "0x74145713fd0f8569520250acee2e7702885e907daa409aac25b3a0ac771714f",
+      "type": "INVOKE_FUNCTION"
+    },
+    {
+      "calldata": [
+        "0x42426b8af6cfdefba38684677968f7674a24f8fd161e52b8b5f5b481d522366",
+        "0x3276861cf5e05d6daf8f352cabb47df623eb10c383ab742fcc7abea94d5c5cc",
+        "0x9",
+        "0x1b1ae4d6e2ef500000",
+        "0x0",
+        "0x23eb7897dac6f5",
+        "0x0",
+        "0x2",
+        "0x51ecf6b7831cd141391313ce417f5f50e2a2cadba553562064bcd0e78eed8d7",
+        "0x1f7b127a0870766c6651875b2a58cd39d57a99ac8cb34064523affd955c1e2",
+        "0x45af632104aa53ba833e0b3f6042a96844e3f4bf0ed06dd5200a20e25d214d",
+        "0x62104db4",
+        "0x14"
+      ],
+      "contract_address": "0x45af632104aa53ba833e0b3f6042a96844e3f4bf0ed06dd5200a20e25d214d",
+      "entry_point_selector": "0x240060cdb34fcc260f41eac7474ee1d7c80b7e3607daff9ac67c7ea2ebb1c44",
+      "entry_point_type": "EXTERNAL",
+      "max_fee": "0x0",
+      "signature": [
+        "0x29b03870b0e8d6275f903cab7690390a794fb606481b406dda103235f5ba565",
+        "0x5c2a3aefd8d4b07fff70c7545999e7e4732fad2847514bb3a6ee0e6c7902849"
+      ],
+      "transaction_hash": "0x6a312193888e458c77f81baab5204adfc328f8c4a8561671db262b5d09e0320",
+      "type": "INVOKE_FUNCTION"
+    },
+    {
+      "calldata": [
+        "0x7394cbe418daa16e42b87ba67372d4ab4a5df0b05c6e554d158458ce245bc10",
+        "0x219209e083275171774dab1df80982e9df2096516f06319c5c6d71ae0a8480c",
+        "0x3",
+        "0x71faa7d6c3ddb081395574c5a6904f4458ff648b66e2123b877555d9ae0260e",
+        "0x80000000000000000000000000000000",
+        "0x0",
+        "0x2"
+      ],
+      "contract_address": "0x2d662eb0badfc89b9bee7fc530e9d1104746079b671ed7bb2964097c4a73c52",
+      "entry_point_selector": "0x240060cdb34fcc260f41eac7474ee1d7c80b7e3607daff9ac67c7ea2ebb1c44",
+      "entry_point_type": "EXTERNAL",
+      "max_fee": "0x0",
+      "signature": [
+        "0x7cb988d19c595a9025d4f1eb19472b49ae5f2bf40aa2e3f4066988f913463b6",
+        "0x4b434d3e4e189db779cdb7abac355b5df4d69e371a686e146d1113adcdc1998"
+      ],
+      "transaction_hash": "0x16a4a2916fd2e4171f34c00115b323fc6668fc106820a06f4da97faae625ad0",
+      "type": "INVOKE_FUNCTION"
+    }
+  ]
+}

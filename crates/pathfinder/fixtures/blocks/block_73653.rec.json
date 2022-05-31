@@ -1,0 +1,738 @@
+{
+  "block_hash": "0x1211eb295d1ea719c89232d154b8c839f0fff5f7e15a3aa2595ab2e9b14a0a6",
+  "block_number": 73653,
+  "gas_price": "0x0",
+  "parent_block_hash": "0x0",
+  "sequencer_address": "0x46a89ae102987331d369645031b49c27738ed096f2789c24449966da4c6de6b",
+  "state_root": "0x611ca631fa2094b6de9c593e4753739435101fff175c8befbe8eb880010faef",
+  "status": "ACCEPTED_ON_L1",
+  "timestamp": 1645234515,
+  "transaction_receipts": [
+    {
+      "actual_fee": null,
+      "events": [],
+      "execution_resources": {
+        "builtin_instance_counter": {
+          "bitwise_builtin": 0,
+          "ec_op_builtin": 0,
+          "ecdsa_builtin": 1,
+          "output_builtin": 0,
+          "pedersen_builtin": 12,
+          "range_check_builtin": 7
+        },
+        "n_memory_holes": 11,
+        "n_steps": 589
+      },
+      "l1_to_l2_consumed_message": null,
+      "l2_to_l1_messages": [],
+      "transaction_hash": "0x61c7d0d8d8cd4b031e7dcfe6a3286001e41c3c77add9967a5eb1368c5fed500",
+      "transaction_index": 0
+    },
+    {
+      "actual_fee": null,
+      "events": [
+        {
+          "data": [
+            "31139089259347822121095",
+            "0",
+            "1527676298130923277355521031",
+            "0"
+          ],
+          "from_address": "0x3c2c913814a594de73f60277baf03ddafcaa30c4a6ad515bea7f513d6c19aad",
+          "keys": [
+            "398053058951989555333681072484050173961605570988501480763811701452620255794"
+          ]
+        },
+        {
+          "data": [
+            "1873125134130939911663742085488640126565029347380733349634332543812671513446",
+            "0",
+            "0",
+            "500000000000000000000",
+            "0",
+            "10161079997979104",
+            "0",
+            "0",
+            "0",
+            "1026973319487281042526443682404711231283592100472610309324752456759353736302"
+          ],
+          "from_address": "0x3c2c913814a594de73f60277baf03ddafcaa30c4a6ad515bea7f513d6c19aad",
+          "keys": [
+            "401232615450942068247101749579355459433767234463227600992773598479232584875"
+          ]
+        }
+      ],
+      "execution_resources": {
+        "builtin_instance_counter": {
+          "bitwise_builtin": 0,
+          "ec_op_builtin": 0,
+          "ecdsa_builtin": 1,
+          "output_builtin": 0,
+          "pedersen_builtin": 36,
+          "range_check_builtin": 657
+        },
+        "n_memory_holes": 206,
+        "n_steps": 9409
+      },
+      "l1_to_l2_consumed_message": null,
+      "l2_to_l1_messages": [],
+      "transaction_hash": "0x4551050c9b0c79c1a185358b2f218e85b4fa3292d791c41cfcd11ebdda9f501",
+      "transaction_index": 1
+    },
+    {
+      "actual_fee": null,
+      "events": [],
+      "execution_resources": {
+        "builtin_instance_counter": {
+          "bitwise_builtin": 0,
+          "ec_op_builtin": 0,
+          "ecdsa_builtin": 1,
+          "output_builtin": 0,
+          "pedersen_builtin": 12,
+          "range_check_builtin": 7
+        },
+        "n_memory_holes": 11,
+        "n_steps": 589
+      },
+      "l1_to_l2_consumed_message": null,
+      "l2_to_l1_messages": [],
+      "transaction_hash": "0x4631e9a3fdab1bfad20b61110935b8d9e0c454a762020f2636aff73031851f2",
+      "transaction_index": 2
+    },
+    {
+      "actual_fee": null,
+      "events": [],
+      "execution_resources": {
+        "builtin_instance_counter": {
+          "bitwise_builtin": 0,
+          "ec_op_builtin": 0,
+          "ecdsa_builtin": 0,
+          "output_builtin": 0,
+          "pedersen_builtin": 0,
+          "range_check_builtin": 0
+        },
+        "n_memory_holes": 0,
+        "n_steps": 178
+      },
+      "l1_to_l2_consumed_message": null,
+      "l2_to_l1_messages": [],
+      "transaction_hash": "0xaadbb777b5bf68035f0d163a098d9e875cde5263d617ab9825a1bb8245916a",
+      "transaction_index": 3
+    },
+    {
+      "actual_fee": null,
+      "events": [],
+      "execution_resources": {
+        "builtin_instance_counter": {
+          "bitwise_builtin": 0,
+          "ec_op_builtin": 0,
+          "ecdsa_builtin": 1,
+          "output_builtin": 0,
+          "pedersen_builtin": 12,
+          "range_check_builtin": 14
+        },
+        "n_memory_holes": 20,
+        "n_steps": 756
+      },
+      "l1_to_l2_consumed_message": null,
+      "l2_to_l1_messages": [],
+      "transaction_hash": "0x4e31ff0ecea1179c619f98d0f66a55553628348114ea5e6826af33a2c2ae0cb",
+      "transaction_index": 4
+    },
+    {
+      "actual_fee": null,
+      "events": [],
+      "execution_resources": {
+        "builtin_instance_counter": {
+          "bitwise_builtin": 0,
+          "ec_op_builtin": 0,
+          "ecdsa_builtin": 1,
+          "output_builtin": 0,
+          "pedersen_builtin": 12,
+          "range_check_builtin": 7
+        },
+        "n_memory_holes": 11,
+        "n_steps": 589
+      },
+      "l1_to_l2_consumed_message": null,
+      "l2_to_l1_messages": [],
+      "transaction_hash": "0x352d630259e237d1c9df261acdd7f9dfaf4fa43a0f849cb2f506e509d928b85",
+      "transaction_index": 5
+    },
+    {
+      "actual_fee": null,
+      "events": [],
+      "execution_resources": {
+        "builtin_instance_counter": {
+          "bitwise_builtin": 0,
+          "ec_op_builtin": 0,
+          "ecdsa_builtin": 1,
+          "output_builtin": 0,
+          "pedersen_builtin": 12,
+          "range_check_builtin": 7
+        },
+        "n_memory_holes": 11,
+        "n_steps": 589
+      },
+      "l1_to_l2_consumed_message": null,
+      "l2_to_l1_messages": [],
+      "transaction_hash": "0x2f0e94fb43f1fdef8e15f8094d7464c7901515b969fb843ec03fc9ae8568531",
+      "transaction_index": 6
+    },
+    {
+      "actual_fee": null,
+      "events": [
+        {
+          "data": [
+            "2086679227212642022257945653521272357902722045778374290507608479092033229853",
+            "0",
+            "2205",
+            "0"
+          ],
+          "from_address": "0x4e34321e0bce0e4ff8ff0bcb3a9a030d423bca29a9d99cbcdd60edb9a2bf03a",
+          "keys": [
+            "657815464599875149391098572718261307247644871927703147853200508406844818846"
+          ]
+        },
+        {
+          "data": [
+            "2086679227212642022257945653521272357902722045778374290507608479092033229853",
+            "923449197781847650905208723797822579995040785421767278288140935083415364331",
+            "2205",
+            "0"
+          ],
+          "from_address": "0x4e34321e0bce0e4ff8ff0bcb3a9a030d423bca29a9d99cbcdd60edb9a2bf03a",
+          "keys": [
+            "271746229759260285552388728919865295615886751538523744128730118297934206697"
+          ]
+        },
+        {
+          "data": [
+            "546361798409759457383878239205020631052946856773644351492189442236208961274",
+            "5",
+            "923449197781847650905208723797822579995040785421767278288140935083415364331",
+            "2086679227212642022257945653521272357902722045778374290507608479092033229853",
+            "2210789008388887219571961268461431783600334223738618386721673767747221975098",
+            "2205",
+            "0",
+            "3267429884791031784129188059026496191501564961518175231747906707757621165072",
+            "10000000000000000000",
+            "0",
+            "0",
+            "134561381115270",
+            "0",
+            "0",
+            "546361798409759457383878239205020631052946856773644351492189442236208961274",
+            "5",
+            "2086679227212642022257945653521272357902722045778374290507608479092033229853",
+            "0",
+            "2210789008388887219571961268461431783600334223738618386721673767747221975098",
+            "2205",
+            "0",
+            "3267429884791031784129188059026496191501564961518175231747906707757621165072",
+            "10000000000000000000",
+            "0",
+            "1",
+            "90209504207434",
+            "3394530772320386943456307937030025078523396016015387150066801949477176914963",
+            "1447297033080476938062184101203754596313025623607445812074092834464014639282"
+          ],
+          "from_address": "0x1353ad56e7eba3bedf387fbc67a2890c9443f0fbab77fde515590f34840d6fa",
+          "keys": [
+            "1770512603777573587681962171754752088252588488673325494099137082191741071471"
+          ]
+        }
+      ],
+      "execution_resources": {
+        "builtin_instance_counter": {
+          "bitwise_builtin": 0,
+          "ec_op_builtin": 0,
+          "ecdsa_builtin": 2,
+          "output_builtin": 0,
+          "pedersen_builtin": 157,
+          "range_check_builtin": 114
+        },
+        "n_memory_holes": 213,
+        "n_steps": 5082
+      },
+      "l1_to_l2_consumed_message": null,
+      "l2_to_l1_messages": [],
+      "transaction_hash": "0x74092e53f99e21d18faa039c21baf6311f390bdc15185a0cfd826d2d20d67c4",
+      "transaction_index": 7
+    },
+    {
+      "actual_fee": null,
+      "events": [],
+      "execution_resources": {
+        "builtin_instance_counter": {
+          "bitwise_builtin": 0,
+          "ec_op_builtin": 0,
+          "ecdsa_builtin": 1,
+          "output_builtin": 0,
+          "pedersen_builtin": 12,
+          "range_check_builtin": 7
+        },
+        "n_memory_holes": 12,
+        "n_steps": 587
+      },
+      "l1_to_l2_consumed_message": null,
+      "l2_to_l1_messages": [],
+      "transaction_hash": "0x32ff7aeb4a5a779a2fecf25dfebc871e0b98dacff1d422929b67a5392186f57",
+      "transaction_index": 8
+    },
+    {
+      "actual_fee": null,
+      "events": [],
+      "execution_resources": {
+        "builtin_instance_counter": {
+          "bitwise_builtin": 0,
+          "ec_op_builtin": 0,
+          "ecdsa_builtin": 1,
+          "output_builtin": 0,
+          "pedersen_builtin": 12,
+          "range_check_builtin": 7
+        },
+        "n_memory_holes": 12,
+        "n_steps": 587
+      },
+      "l1_to_l2_consumed_message": null,
+      "l2_to_l1_messages": [],
+      "transaction_hash": "0x74a5fb8fb171ee488f693daeddebd2a7ecc8e99b48d4ca16c4c9a19c76d0893",
+      "transaction_index": 9
+    },
+    {
+      "actual_fee": null,
+      "events": [],
+      "execution_resources": {
+        "builtin_instance_counter": {
+          "bitwise_builtin": 0,
+          "ec_op_builtin": 0,
+          "ecdsa_builtin": 1,
+          "output_builtin": 0,
+          "pedersen_builtin": 12,
+          "range_check_builtin": 7
+        },
+        "n_memory_holes": 12,
+        "n_steps": 587
+      },
+      "l1_to_l2_consumed_message": null,
+      "l2_to_l1_messages": [],
+      "transaction_hash": "0x74145713fd0f8569520250acee2e7702885e907daa409aac25b3a0ac771714f",
+      "transaction_index": 10
+    },
+    {
+      "actual_fee": null,
+      "events": [
+        {
+          "data": [
+            "31139079098274465493355",
+            "0",
+            "1527676798130923277355521031",
+            "0"
+          ],
+          "from_address": "0x3c2c913814a594de73f60277baf03ddafcaa30c4a6ad515bea7f513d6c19aad",
+          "keys": [
+            "398053058951989555333681072484050173961605570988501480763811701452620255794"
+          ]
+        },
+        {
+          "data": [
+            "1873125134130939911663742085488640126565029347380733349634332543812671513446",
+            "0",
+            "0",
+            "500000000000000000000",
+            "0",
+            "10161073356627740",
+            "0",
+            "0",
+            "0",
+            "123122925592341749977341964626492418051063059058366215305042161585079787853"
+          ],
+          "from_address": "0x3c2c913814a594de73f60277baf03ddafcaa30c4a6ad515bea7f513d6c19aad",
+          "keys": [
+            "401232615450942068247101749579355459433767234463227600992773598479232584875"
+          ]
+        }
+      ],
+      "execution_resources": {
+        "builtin_instance_counter": {
+          "bitwise_builtin": 0,
+          "ec_op_builtin": 0,
+          "ecdsa_builtin": 1,
+          "output_builtin": 0,
+          "pedersen_builtin": 36,
+          "range_check_builtin": 575
+        },
+        "n_memory_holes": 216,
+        "n_steps": 8615
+      },
+      "l1_to_l2_consumed_message": null,
+      "l2_to_l1_messages": [],
+      "transaction_hash": "0x6a312193888e458c77f81baab5204adfc328f8c4a8561671db262b5d09e0320",
+      "transaction_index": 11
+    },
+    {
+      "actual_fee": null,
+      "events": [],
+      "execution_resources": {
+        "builtin_instance_counter": {
+          "bitwise_builtin": 0,
+          "ec_op_builtin": 0,
+          "ecdsa_builtin": 1,
+          "output_builtin": 0,
+          "pedersen_builtin": 12,
+          "range_check_builtin": 7
+        },
+        "n_memory_holes": 11,
+        "n_steps": 589
+      },
+      "l1_to_l2_consumed_message": null,
+      "l2_to_l1_messages": [],
+      "transaction_hash": "0x16a4a2916fd2e4171f34c00115b323fc6668fc106820a06f4da97faae625ad0",
+      "transaction_index": 12
+    }
+  ],
+  "transactions": [
+    {
+      "calldata": [
+        "3267429884791031784129188059026496191501564961518175231747906707757621165072",
+        "949021990203918389843157787496164629863144228991510976554585288817234167820",
+        "3",
+        "546361798409759457383878239205020631052946856773644351492189442236208961274",
+        "340282366920938463463374607431768211455",
+        "340282366920938463463374607431768211455",
+        "14"
+      ],
+      "class_hash": null,
+      "constructor_calldata": null,
+      "contract_address": "0x27481f7c466cf785b370865c81dd4e975fb6fc929b628c82a1cec29365b08cc",
+      "contract_address_salt": null,
+      "entry_point_selector": "0x240060cdb34fcc260f41eac7474ee1d7c80b7e3607daff9ac67c7ea2ebb1c44",
+      "entry_point_type": "EXTERNAL",
+      "max_fee": null,
+      "signature": [
+        "720633135738179707399569953781047210522197169411269880337299527584995553276",
+        "2923265233376769852990294756508373564316681329401499628480566937991801840648"
+      ],
+      "transaction_hash": "0x61c7d0d8d8cd4b031e7dcfe6a3286001e41c3c77add9967a5eb1368c5fed500",
+      "type": "INVOKE_FUNCTION"
+    },
+    {
+      "calldata": [
+        "1873125134130939911663742085488640126565029347380733349634332543812671513446",
+        "1426565999849372202067242202088433764048928624912224385906297528280239424972",
+        "9",
+        "500000000000000000000",
+        "0",
+        "10110529261713507",
+        "0",
+        "2",
+        "2316001213725724482951517035645140472780295210856897158183782244021559023831",
+        "55621671939396475369986430480273511774350497817709217235604137151888212450",
+        "1026973319487281042526443682404711231283592100472610309324752456759353736302",
+        "1645235568",
+        "21"
+      ],
+      "class_hash": null,
+      "constructor_calldata": null,
+      "contract_address": "0x2453f0d8847802115abc5620001df7ec64a3ac833969ef2c44013fb8dcefc6e",
+      "contract_address_salt": null,
+      "entry_point_selector": "0x240060cdb34fcc260f41eac7474ee1d7c80b7e3607daff9ac67c7ea2ebb1c44",
+      "entry_point_type": "EXTERNAL",
+      "max_fee": null,
+      "signature": [
+        "862686476533064733616120972524432893129111310416491896691849659670335955850",
+        "1537068220764083301779675718425961212461725564952982616488381761167841648134"
+      ],
+      "transaction_hash": "0x4551050c9b0c79c1a185358b2f218e85b4fa3292d791c41cfcd11ebdda9f501",
+      "type": "INVOKE_FUNCTION"
+    },
+    {
+      "calldata": [
+        "3267429884791031784129188059026496191501564961518175231747906707757621165072",
+        "949021990203918389843157787496164629863144228991510976554585288817234167820",
+        "3",
+        "3222138877362455837336203414511899549532510795732583806035105711862644221454",
+        "170141183460469231731687303715884105728",
+        "0",
+        "2"
+      ],
+      "class_hash": null,
+      "constructor_calldata": null,
+      "contract_address": "0xe89f7311a36cd7378fa258db73ef6ef80fc9e6230c9cb282dea8a0aa89fdf5",
+      "contract_address_salt": null,
+      "entry_point_selector": "0x240060cdb34fcc260f41eac7474ee1d7c80b7e3607daff9ac67c7ea2ebb1c44",
+      "entry_point_type": "EXTERNAL",
+      "max_fee": null,
+      "signature": [
+        "3539581891192597578495463105780772643588172615427867019437090425066603560723",
+        "3119225668787709025427861526469810662952829840466413810459907677962555950910"
+      ],
+      "transaction_hash": "0x4631e9a3fdab1bfad20b61110935b8d9e0c454a762020f2636aff73031851f2",
+      "type": "INVOKE_FUNCTION"
+    },
+    {
+      "calldata": [
+        "2738220351930127617869762182641992497867453699114278183913905664210567824986",
+        "2635639247220653866597116588769513806631510556608213162621881932366866082282"
+      ],
+      "class_hash": null,
+      "constructor_calldata": null,
+      "contract_address": "0x4fd65b6bdcc9224c4e91be212172ba765796b0a8e0cb1798dc5c540ccd8d348",
+      "contract_address_salt": null,
+      "entry_point_selector": "0x19a35a6e95cb7a3318dbb244f20975a1cd8587cc6b5259f15f61d7beb7ee43b",
+      "entry_point_type": "EXTERNAL",
+      "max_fee": null,
+      "signature": [],
+      "transaction_hash": "0xaadbb777b5bf68035f0d163a098d9e875cde5263d617ab9825a1bb8245916a",
+      "type": "INVOKE_FUNCTION"
+    },
+    {
+      "calldata": [
+        "3267429884791031784129188059026496191501564961518175231747906707757621165072",
+        "1329909728320632088402217562277154056711815095720684343816173432540100887380",
+        "3",
+        "1346886899958876855558005522480713300999618037653716236381768251958266860803",
+        "1000000000000000000000",
+        "0",
+        "0"
+      ],
+      "class_hash": null,
+      "constructor_calldata": null,
+      "contract_address": "0x2fa4f9bbc6f982ecdaee1452a521b896472fb7aff3ba62a2e2303489dd29503",
+      "contract_address_salt": null,
+      "entry_point_selector": "0x240060cdb34fcc260f41eac7474ee1d7c80b7e3607daff9ac67c7ea2ebb1c44",
+      "entry_point_type": "EXTERNAL",
+      "max_fee": null,
+      "signature": [
+        "1553082283838154979390094538613615450326309259014124682713449760225611131443",
+        "2044515561664516022522894005142377185902810738271889583923993974113849389417"
+      ],
+      "transaction_hash": "0x4e31ff0ecea1179c619f98d0f66a55553628348114ea5e6826af33a2c2ae0cb",
+      "type": "INVOKE_FUNCTION"
+    },
+    {
+      "calldata": [
+        "3267429884791031784129188059026496191501564961518175231747906707757621165072",
+        "949021990203918389843157787496164629863144228991510976554585288817234167820",
+        "3",
+        "546361798409759457383878239205020631052946856773644351492189442236208961274",
+        "340282366920938463463374607431768211455",
+        "340282366920938463463374607431768211455",
+        "14"
+      ],
+      "class_hash": null,
+      "constructor_calldata": null,
+      "contract_address": "0x1554df7e981e0e41eaca094e20b7ba57cb831e25972abb69308189ac75a7ac3",
+      "contract_address_salt": null,
+      "entry_point_selector": "0x240060cdb34fcc260f41eac7474ee1d7c80b7e3607daff9ac67c7ea2ebb1c44",
+      "entry_point_type": "EXTERNAL",
+      "max_fee": null,
+      "signature": [
+        "2610574104182809804778841876153487653277160031184246218283992986141713151177",
+        "1554257483339374203285402936373734704161260476732842255947505453599743320090"
+      ],
+      "transaction_hash": "0x352d630259e237d1c9df261acdd7f9dfaf4fa43a0f849cb2f506e509d928b85",
+      "type": "INVOKE_FUNCTION"
+    },
+    {
+      "calldata": [
+        "2316001213725724482951517035645140472780295210856897158183782244021559023831",
+        "949021990203918389843157787496164629863144228991510976554585288817234167820",
+        "3",
+        "1873125134130939911663742085488640126565029347380733349634332543812671513446",
+        "30000000000000000000",
+        "0",
+        "3"
+      ],
+      "class_hash": null,
+      "constructor_calldata": null,
+      "contract_address": "0x37f32b4be9b3232596e880f2302c1ee1d11b47585575a8b38e9bf34598ff527",
+      "contract_address_salt": null,
+      "entry_point_selector": "0x240060cdb34fcc260f41eac7474ee1d7c80b7e3607daff9ac67c7ea2ebb1c44",
+      "entry_point_type": "EXTERNAL",
+      "max_fee": null,
+      "signature": [
+        "279189304440225953507458947032652949157975326126811892954976459351713225566",
+        "859549919377596041944221703606932894219293765883861188423099317066526656096"
+      ],
+      "transaction_hash": "0x2f0e94fb43f1fdef8e15f8094d7464c7901515b969fb843ec03fc9ae8568531",
+      "type": "INVOKE_FUNCTION"
+    },
+    {
+      "calldata": [
+        "546361798409759457383878239205020631052946856773644351492189442236208961274",
+        "1089264588725885585725073545971474804350645880165681210776433480213036965078",
+        "28",
+        "546361798409759457383878239205020631052946856773644351492189442236208961274",
+        "5",
+        "923449197781847650905208723797822579995040785421767278288140935083415364331",
+        "2086679227212642022257945653521272357902722045778374290507608479092033229853",
+        "2210789008388887219571961268461431783600334223738618386721673767747221975098",
+        "2205",
+        "0",
+        "3267429884791031784129188059026496191501564961518175231747906707757621165072",
+        "10000000000000000000",
+        "0",
+        "0",
+        "134561381115270",
+        "0",
+        "0",
+        "546361798409759457383878239205020631052946856773644351492189442236208961274",
+        "5",
+        "2086679227212642022257945653521272357902722045778374290507608479092033229853",
+        "0",
+        "2210789008388887219571961268461431783600334223738618386721673767747221975098",
+        "2205",
+        "0",
+        "3267429884791031784129188059026496191501564961518175231747906707757621165072",
+        "10000000000000000000",
+        "0",
+        "1",
+        "90209504207434",
+        "3394530772320386943456307937030025078523396016015387150066801949477176914963",
+        "1447297033080476938062184101203754596313025623607445812074092834464014639282",
+        "10"
+      ],
+      "class_hash": null,
+      "constructor_calldata": null,
+      "contract_address": "0x20aa75a714e194e6d0222ee666453f2f62217024d97325207e2ae5f689ce2eb",
+      "contract_address_salt": null,
+      "entry_point_selector": "0x240060cdb34fcc260f41eac7474ee1d7c80b7e3607daff9ac67c7ea2ebb1c44",
+      "entry_point_type": "EXTERNAL",
+      "max_fee": null,
+      "signature": [
+        "1231859115201253860147581642983557953904000706153298292205409544972925000251",
+        "1388859142062506643530050143506712907335140426088962846090849730241750454406"
+      ],
+      "transaction_hash": "0x74092e53f99e21d18faa039c21baf6311f390bdc15185a0cfd826d2d20d67c4",
+      "type": "INVOKE_FUNCTION"
+    },
+    {
+      "calldata": [
+        "3267429884791031784129188059026496191501564961518175231747906707757621165072",
+        "949021990203918389843157787496164629863144228991510976554585288817234167820",
+        "3",
+        "546361798409759457383878239205020631052946856773644351492189442236208961274",
+        "340282366920938463463374607431768211455",
+        "340282366920938463463374607431768211455",
+        "13"
+      ],
+      "class_hash": null,
+      "constructor_calldata": null,
+      "contract_address": "0x706053bddd2c287277c380a43150895075949b5552b1fbe0376fa61684d4ad0",
+      "contract_address_salt": null,
+      "entry_point_selector": "0x240060cdb34fcc260f41eac7474ee1d7c80b7e3607daff9ac67c7ea2ebb1c44",
+      "entry_point_type": "EXTERNAL",
+      "max_fee": null,
+      "signature": [
+        "3084799202946558855826145279989618934372285474221405998672119549356743899764",
+        "1656612764692847221937622295101110315363763858065407444499776572955703258845"
+      ],
+      "transaction_hash": "0x32ff7aeb4a5a779a2fecf25dfebc871e0b98dacff1d422929b67a5392186f57",
+      "type": "INVOKE_FUNCTION"
+    },
+    {
+      "calldata": [
+        "2316001213725724482951517035645140472780295210856897158183782244021559023831",
+        "949021990203918389843157787496164629863144228991510976554585288817234167820",
+        "3",
+        "1873125134130939911663742085488640126565029347380733349634332543812671513446",
+        "1150000000000000022512",
+        "0",
+        "1272"
+      ],
+      "class_hash": null,
+      "constructor_calldata": null,
+      "contract_address": "0x1f438626b21368e3bec6114aa36f8e3b5cff60e4601ff9a808f644305398e10",
+      "contract_address_salt": null,
+      "entry_point_selector": "0x240060cdb34fcc260f41eac7474ee1d7c80b7e3607daff9ac67c7ea2ebb1c44",
+      "entry_point_type": "EXTERNAL",
+      "max_fee": null,
+      "signature": [
+        "56410264958478221670507847803899684988858603421632919470025037365106747517",
+        "1517933934158360914347138767916488280556974321491091301929016669518211287768"
+      ],
+      "transaction_hash": "0x74a5fb8fb171ee488f693daeddebd2a7ecc8e99b48d4ca16c4c9a19c76d0893",
+      "type": "INVOKE_FUNCTION"
+    },
+    {
+      "calldata": [
+        "3267429884791031784129188059026496191501564961518175231747906707757621165072",
+        "949021990203918389843157787496164629863144228991510976554585288817234167820",
+        "3",
+        "3222138877362455837336203414511899549532510795732583806035105711862644221454",
+        "170141183460469231731687303715884105728",
+        "0",
+        "1"
+      ],
+      "class_hash": null,
+      "constructor_calldata": null,
+      "contract_address": "0x2628b04fe246f897147e0ec59bcf40cb46adc97f56bed42a3734c2096349831",
+      "contract_address_salt": null,
+      "entry_point_selector": "0x240060cdb34fcc260f41eac7474ee1d7c80b7e3607daff9ac67c7ea2ebb1c44",
+      "entry_point_type": "EXTERNAL",
+      "max_fee": null,
+      "signature": [
+        "552441015511513950501228536556129656309549496813431724357343588530278154025",
+        "3323093088571053451550057492827286282229949166508502219098614511907555998429"
+      ],
+      "transaction_hash": "0x74145713fd0f8569520250acee2e7702885e907daa409aac25b3a0ac771714f",
+      "type": "INVOKE_FUNCTION"
+    },
+    {
+      "calldata": [
+        "1873125134130939911663742085488640126565029347380733349634332543812671513446",
+        "1426565999849372202067242202088433764048928624912224385906297528280239424972",
+        "9",
+        "500000000000000000000",
+        "0",
+        "10110527361173237",
+        "0",
+        "2",
+        "2316001213725724482951517035645140472780295210856897158183782244021559023831",
+        "55621671939396475369986430480273511774350497817709217235604137151888212450",
+        "123122925592341749977341964626492418051063059058366215305042161585079787853",
+        "1645235636",
+        "20"
+      ],
+      "class_hash": null,
+      "constructor_calldata": null,
+      "contract_address": "0x45af632104aa53ba833e0b3f6042a96844e3f4bf0ed06dd5200a20e25d214d",
+      "contract_address_salt": null,
+      "entry_point_selector": "0x240060cdb34fcc260f41eac7474ee1d7c80b7e3607daff9ac67c7ea2ebb1c44",
+      "entry_point_type": "EXTERNAL",
+      "max_fee": null,
+      "signature": [
+        "1178511338203444455477440410717701947052878796134063430413045620023028852069",
+        "2605462275870719846274273340668904184071399996300959020510206299807291549769"
+      ],
+      "transaction_hash": "0x6a312193888e458c77f81baab5204adfc328f8c4a8561671db262b5d09e0320",
+      "type": "INVOKE_FUNCTION"
+    },
+    {
+      "calldata": [
+        "3267429884791031784129188059026496191501564961518175231747906707757621165072",
+        "949021990203918389843157787496164629863144228991510976554585288817234167820",
+        "3",
+        "3222138877362455837336203414511899549532510795732583806035105711862644221454",
+        "170141183460469231731687303715884105728",
+        "0",
+        "2"
+      ],
+      "class_hash": null,
+      "constructor_calldata": null,
+      "contract_address": "0x2d662eb0badfc89b9bee7fc530e9d1104746079b671ed7bb2964097c4a73c52",
+      "contract_address_salt": null,
+      "entry_point_selector": "0x240060cdb34fcc260f41eac7474ee1d7c80b7e3607daff9ac67c7ea2ebb1c44",
+      "entry_point_type": "EXTERNAL",
+      "max_fee": null,
+      "signature": [
+        "3525912763744157857273343669753459373192309361009345767474860146628922467254",
+        "2127648469455938270830828869616177788675963011677946647494051491688493095320"
+      ],
+      "transaction_hash": "0x16a4a2916fd2e4171f34c00115b323fc6668fc106820a06f4da97faae625ad0",
+      "type": "INVOKE_FUNCTION"
+    }
+  ]
+}

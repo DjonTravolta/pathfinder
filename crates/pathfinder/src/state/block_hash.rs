@@ -21,7 +21,11 @@ use crate::state::merkle_tree::MerkleTree;
 ///
 /// See the `block_hash.py` helper script that uses the cairo-lang Python
 /// implementation to compute the block hash for details.
-pub fn compute_block_hash(block: &Block) -> Result<StarknetBlockHash> {
+pub fn compute_block_hash(
+    block: &Block,
+    expected_block_hash: StarknetBlockHash,
+    fallback_sequencer_addresses: &[SequencerAddress],
+) -> Result<StarknetBlockHash> {
     let transaction_commitment = calculate_transaction_commitment(&block.transactions)?;
     let event_commitment = calculate_event_commitment(&block.transaction_receipts)?;
 
@@ -67,7 +71,42 @@ pub fn compute_block_hash(block: &Block) -> Result<StarknetBlockHash> {
         block.parent_block_hash.0,
     ];
 
-    let block_hash = stark_hash_of_array(data.into_iter());
+    let mut block_hash = stark_hash_of_array(data.into_iter());
+
+    if block_hash != expected_block_hash.0 {
+        // no luck with the block hash in the block, try fallback addresses
+        for fallback_address in fallback_sequencer_addresses {
+            let data = [
+                // block number
+                StarkHash::from_u64(block_number.0),
+                // global state root
+                state_root.0,
+                // sequencer address
+                fallback_address.0,
+                // block timestamp
+                StarkHash::from_u64(block.timestamp.0),
+                // number of transactions
+                StarkHash::from_u64(num_transactions),
+                // transaction commitment
+                transaction_commitment,
+                // number of events
+                StarkHash::from_u64(num_events),
+                // event commitment
+                event_commitment,
+                // reserved: protocol version
+                StarkHash::ZERO,
+                // reserved: extra data
+                StarkHash::ZERO,
+                // parent block hash
+                block.parent_block_hash.0,
+            ];
+
+            block_hash = stark_hash_of_array(data.into_iter());
+            if block_hash == expected_block_hash.0 {
+                break;
+            }
+        }
+    }
 
     Ok(StarknetBlockHash(block_hash))
 }
@@ -323,7 +362,7 @@ mod tests {
         use crate::sequencer::reply::Block;
 
         // This tests with a pre-0.8.0 block where zero is used as the sequencer address.
-        let json = include_bytes!("../../fixtures/blocks/block_73653.json");
+        let json = include_bytes!("../../fixtures/blocks/block_90000.json");
         let block: Block = serde_json::from_slice(json).unwrap();
 
         let block_hash = compute_block_hash(&block).unwrap();
@@ -358,6 +397,35 @@ mod tests {
             )
             .unwrap(),
         ));
+
+        let block_hash = compute_block_hash(&block).unwrap();
+        assert_eq!(block.block_hash.unwrap(), block_hash);
+    }
+
+    #[test]
+    fn test_block_hash_with_bogus_sequencer_address() {
+        use crate::sequencer::reply::Block;
+
+        let json = include_bytes!("../../fixtures/blocks/block_147540.json");
+        let mut block: Block = serde_json::from_slice(json).unwrap();
+        block.sequencer_address = Some(SequencerAddress(
+            StarkHash::from_hex_str(
+                "0x46A89AE102987331D369645031B49C27738ED096F2789C24449966DA4C6DE6B",
+            )
+            .unwrap(),
+        ));
+        let block_hash = compute_block_hash(&block).unwrap();
+        assert_eq!(block.block_hash.unwrap(), block_hash);
+    }
+
+    #[test]
+    fn test_block_hash_0() {
+        use crate::sequencer::reply::Block;
+
+        // This tests with a post-0.8.2 block where we have correct sequencer address
+        // information in the block itself.
+        let json = include_bytes!("../../fixtures/blocks/block_73653.json");
+        let block: Block = serde_json::from_slice(json).unwrap();
 
         let block_hash = compute_block_hash(&block).unwrap();
         assert_eq!(block.block_hash.unwrap(), block_hash);

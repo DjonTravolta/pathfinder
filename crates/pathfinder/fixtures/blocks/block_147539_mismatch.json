@@ -1,0 +1,99 @@
+{
+    "block_hash": "0x4f4acaa9d6b9f10f86cee0c108d48468949a9a5597f868a67937fc1431a14db",
+    "parent_block_hash": "0x8bd59938addae903664e06e7b4a26af67ece5ac01c6bf584e541785fd8bbea",
+    "block_number": 147539,
+    "state_root": "0380bae93a668332ec3996483853a2348d1af96df642846f7dddf794550cff4f",
+    "status": "ACCEPTED_ON_L1",
+    "gas_price": "0x0",
+    "transactions": [
+        {
+            "contract_address": "0xba017ce59ea233531242639f411922dd4829847e149ca83ec01a12da5115fb",
+            "entry_point_selector": "0x15d440da00174932e75c914a115fe86cef6733037ac9545465f34a87daf9b3d",
+            "entry_point_type": "L1_HANDLER",
+            "calldata": [
+                "0xba1b85d16e2dbe023e980c9e00b655e4e3ec81ab",
+                "0x7576557a9d2225f9031b2b4679c8829c",
+                "0x2704eb49ae654849aa4dab361a08d9b4"
+            ],
+            "signature": [],
+            "transaction_hash": "0x7b465148873cc3e469ac7ac80e50ae1986e095f91604309f4e34a3471b7ca3c",
+            "max_fee": "0x0",
+            "type": "INVOKE_FUNCTION"
+        },
+        {
+            "contract_address": "0xba017ce59ea233531242639f411922dd4829847e149ca83ec01a12da5115fb",
+            "entry_point_selector": "0x15d440da00174932e75c914a115fe86cef6733037ac9545465f34a87daf9b3d",
+            "entry_point_type": "L1_HANDLER",
+            "calldata": [
+                "0xba1b85d16e2dbe023e980c9e00b655e4e3ec81ab",
+                "0x3694e46826261295428eace0b08f6898",
+                "0x3ad897785459d712d8d850bf72107017"
+            ],
+            "signature": [],
+            "transaction_hash": "0x3a155abe0f73486e68aa4d74d5829db36c13c8ce427d24f24f274541adabd41",
+            "max_fee": "0x0",
+            "type": "INVOKE_FUNCTION"
+        }
+    ],
+    "timestamp": 1649169658,
+    "transaction_receipts": [
+        {
+            "transaction_index": 0,
+            "transaction_hash": "0x7b465148873cc3e469ac7ac80e50ae1986e095f91604309f4e34a3471b7ca3c",
+            "l1_to_l2_consumed_message": {
+                "from_address": "0xBA1B85D16E2Dbe023e980C9E00B655E4e3ec81AB",
+                "to_address": "0xba017ce59ea233531242639f411922dd4829847e149ca83ec01a12da5115fb",
+                "selector": "0x15d440da00174932e75c914a115fe86cef6733037ac9545465f34a87daf9b3d",
+                "payload": [
+                    "0x7576557a9d2225f9031b2b4679c8829c",
+                    "0x2704eb49ae654849aa4dab361a08d9b4"
+                ],
+                "nonce": "0x6aa5"
+            },
+            "l2_to_l1_messages": [],
+            "events": [],
+            "execution_resources": {
+                "n_steps": 12522,
+                "builtin_instance_counter": {
+                    "pedersen_builtin": 527,
+                    "range_check_builtin": 399,
+                    "bitwise_builtin": 0,
+                    "output_builtin": 0,
+                    "ecdsa_builtin": 0,
+                    "ec_op_builtin": 0
+                },
+                "n_memory_holes": 1387
+            },
+            "actual_fee": "0x0"
+        },
+        {
+            "transaction_index": 1,
+            "transaction_hash": "0x3a155abe0f73486e68aa4d74d5829db36c13c8ce427d24f24f274541adabd41",
+            "l1_to_l2_consumed_message": {
+                "from_address": "0xBA1B85D16E2Dbe023e980C9E00B655E4e3ec81AB",
+                "to_address": "0xba017ce59ea233531242639f411922dd4829847e149ca83ec01a12da5115fb",
+                "selector": "0x15d440da00174932e75c914a115fe86cef6733037ac9545465f34a87daf9b3d",
+                "payload": [
+                    "0x3694e46826261295428eace0b08f6898",
+                    "0x3ad897785459d712d8d850bf72107017"
+                ],
+                "nonce": "0x6aa6"
+            },
+            "l2_to_l1_messages": [],
+            "events": [],
+            "execution_resources": {
+                "n_steps": 12514,
+                "builtin_instance_counter": {
+                    "pedersen_builtin": 527,
+                    "range_check_builtin": 399,
+                    "bitwise_builtin": 0,
+                    "output_builtin": 0,
+                    "ecdsa_builtin": 0,
+                    "ec_op_builtin": 0
+                },
+                "n_memory_holes": 1391
+            },
+            "actual_fee": "0x0"
+        }
+    ]
+}

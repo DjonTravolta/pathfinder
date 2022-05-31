@@ -5,8 +5,6 @@ from starkware.cairo.common.hash_state import compute_hash_on_elements
 from starkware.cairo.lang.vm.crypto import pedersen_hash
 from starkware.starknet.services.api.feeder_gateway.block_hash import (
     calculate_event_hash,
-    calculate_single_tx_hash_with_signature,
-    calculate_patricia_root,
     calculate_block_hash,
 )
 from starkware.starknet.services.api.feeder_gateway.response_objects import (
@@ -20,47 +18,6 @@ from starkware.starknet.definitions.general_config import (
     build_general_config,
 )
 from starkware.starknet.definitions.transaction_type import TransactionType
-
-
-def print_test_event_hash_value():
-    """
-    Used to generate the expected value used in the "test_event_hash" test case.
-    """
-    print(hex(calculate_event_hash(0xDEADBEEF, [1, 2, 3, 4], [5, 6, 7, 8, 9])))
-
-
-def print_transaction_hash_with_signature():
-    """
-    Used to generate the expected value used in the "test_final_transaction_hash" test case.
-    """
-    print(
-        hex(
-            calculate_single_tx_hash_with_signature(
-                1, [2, 3], hash_function=pedersen_hash
-            )
-        )
-    )
-
-
-def print_hash_on_elements():
-    """
-    Used to generate the expected value used in the "test_compute_hash_on_elements" test case.
-    """
-    print(hex(compute_hash_on_elements([1, 2, 3, 4])))
-
-
-def print_patricia_root_for_commitment_tree():
-    """
-    Used to generate the expected value used in the "test_commitment_merkle_tree" test case.
-    """
-
-    def bytes_hash_function(x: bytes, y: bytes) -> bytes:
-        return to_bytes(pedersen_hash(from_bytes(x), from_bytes(y)))
-
-    ffc = FactFetchingContext(storage=DictStorage(), hash_func=bytes_hash_function)
-
-    root = asyncio.run(calculate_patricia_root([1, 2, 3, 4], height=64, ffc=ffc))
-    print(hex(root))
 
 
 def main():
@@ -87,8 +44,8 @@ def main():
                 parent_hash=block.parent_block_hash,
                 block_number=block.block_number,
                 global_state_root=block.state_root,
-                sequencer_address=block.sequencer_address or 0,
-                block_timestamp=block.timestamp,
+                sequencer_address=0,
+                block_timestamp=0,
                 tx_hashes=tx_hashes,
                 tx_signatures=tx_signatures,
                 event_hashes=event_hashes,

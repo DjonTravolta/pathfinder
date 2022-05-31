@@ -2,9 +2,10 @@ use std::collections::HashSet;
 use std::time::Duration;
 
 use anyhow::Context;
+use stark_hash::StarkHash;
 use tokio::sync::{mpsc, oneshot};
 
-use crate::core::{ClassHash, StarknetBlockHash, StarknetBlockNumber};
+use crate::core::{ClassHash, SequencerAddress, StarknetBlockHash, StarknetBlockNumber};
 use crate::ethereum::state_update::{ContractUpdate, DeployedContract, StateUpdate, StorageUpdate};
 use crate::rpc::types::{BlockNumberOrTag, Tag};
 use crate::sequencer::error::SequencerError;
@@ -193,7 +194,20 @@ async fn download_block(
             // had their block hash calculated with an unknown sequencer address and thus don't match our computed
             // value... Also, we've seen some sequencer bugs where the API returned a bogus sequencer_address
             // for old blocks that had their block hashes computed with zero as the sequencer address.
-            let computed_block_hash = compute_block_hash(&block)?;
+            let expected_block_hash = block.block_hash.unwrap();
+            let computed_block_hash = compute_block_hash(
+                &block,
+                expected_block_hash,
+                &[
+                    SequencerAddress(StarkHash::ZERO),
+                    SequencerAddress(
+                        StarkHash::from_hex_str(
+                            "0x46A89AE102987331D369645031B49C27738ED096F2789C24449966DA4C6DE6B",
+                        )
+                        .unwrap(),
+                    ),
+                ],
+            )?;
             if let Some(block_hash) = block.block_hash {
                 if block_hash != computed_block_hash {
                     let block_number = block.block_number.unwrap();
