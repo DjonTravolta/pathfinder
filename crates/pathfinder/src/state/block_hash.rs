@@ -365,8 +365,9 @@ mod tests {
         let json = include_bytes!("../../fixtures/blocks/block_90000.json");
         let block: Block = serde_json::from_slice(json).unwrap();
 
-        let block_hash = compute_block_hash(&block).unwrap();
-        assert_eq!(block.block_hash.unwrap(), block_hash);
+        let expected_block_hash = block.block_hash.unwrap();
+        let block_hash = compute_block_hash(&block, expected_block_hash, &[]).unwrap();
+        assert_eq!(expected_block_hash, block_hash);
     }
 
     #[test]
@@ -378,8 +379,9 @@ mod tests {
         let json = include_bytes!("../../fixtures/blocks/block_186109.json");
         let block: Block = serde_json::from_slice(json).unwrap();
 
-        let block_hash = compute_block_hash(&block).unwrap();
-        assert_eq!(block.block_hash.unwrap(), block_hash);
+        let expected_block_hash = block.block_hash.unwrap();
+        let block_hash = compute_block_hash(&block, expected_block_hash, &[]).unwrap();
+        assert_eq!(expected_block_hash, block_hash);
     }
 
     #[test]
@@ -390,16 +392,21 @@ mod tests {
         // address in the JSON but the block hash was calculated with the magic value below
         // instead of zero.
         let json = include_bytes!("../../fixtures/blocks/block_156000.json");
-        let mut block: Block = serde_json::from_slice(json).unwrap();
-        block.sequencer_address = Some(SequencerAddress(
-            StarkHash::from_hex_str(
-                "0x46A89AE102987331D369645031B49C27738ED096F2789C24449966DA4C6DE6B",
-            )
-            .unwrap(),
-        ));
+        let block: Block = serde_json::from_slice(json).unwrap();
 
-        let block_hash = compute_block_hash(&block).unwrap();
-        assert_eq!(block.block_hash.unwrap(), block_hash);
+        let expected_block_hash = block.block_hash.unwrap();
+        let block_hash = compute_block_hash(
+            &block,
+            expected_block_hash,
+            &[SequencerAddress(
+                StarkHash::from_hex_str(
+                    "0x46A89AE102987331D369645031B49C27738ED096F2789C24449966DA4C6DE6B",
+                )
+                .unwrap(),
+            )],
+        )
+        .unwrap();
+        assert_eq!(expected_block_hash, block_hash);
     }
 
     #[test]
@@ -407,15 +414,21 @@ mod tests {
         use crate::sequencer::reply::Block;
 
         let json = include_bytes!("../../fixtures/blocks/block_147540.json");
-        let mut block: Block = serde_json::from_slice(json).unwrap();
-        block.sequencer_address = Some(SequencerAddress(
-            StarkHash::from_hex_str(
-                "0x46A89AE102987331D369645031B49C27738ED096F2789C24449966DA4C6DE6B",
-            )
-            .unwrap(),
-        ));
-        let block_hash = compute_block_hash(&block).unwrap();
-        assert_eq!(block.block_hash.unwrap(), block_hash);
+        let block: Block = serde_json::from_slice(json).unwrap();
+
+        let expected_block_hash = block.block_hash.unwrap();
+        let block_hash = compute_block_hash(
+            &block,
+            expected_block_hash,
+            &[SequencerAddress(
+                StarkHash::from_hex_str(
+                    "0x46A89AE102987331D369645031B49C27738ED096F2789C24449966DA4C6DE6B",
+                )
+                .unwrap(),
+            )],
+        )
+        .unwrap();
+        assert_eq!(expected_block_hash, block_hash);
     }
 
     #[test]
@@ -427,7 +440,8 @@ mod tests {
         let json = include_bytes!("../../fixtures/blocks/block_73653.json");
         let block: Block = serde_json::from_slice(json).unwrap();
 
-        let block_hash = compute_block_hash(&block).unwrap();
-        assert_eq!(block.block_hash.unwrap(), block_hash);
+        let expected_block_hash = block.block_hash.unwrap();
+        let block_hash = compute_block_hash(&block, expected_block_hash, &[]).unwrap();
+        assert_eq!(expected_block_hash, block_hash);
     }
 }
