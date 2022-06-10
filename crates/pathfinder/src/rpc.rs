@@ -213,7 +213,7 @@ pub async fn run_server(
             pub contract_address: ContractAddress,
         }
         context
-            .get_class_at(params.parse::<NamedArgs>()?.contract_address)
+            .get_code(params.parse::<NamedArgs>()?.contract_address)
             .await
     })?;
     module.register_async_method(
@@ -1594,7 +1594,7 @@ mod tests {
     mod get_class {
         use super::contract_setup::setup_class_and_contract;
         use super::*;
-        use crate::core::ContractCode;
+        use crate::core::ContractClass;
         use crate::rpc::types::reply::ErrorCode;
 
         mod positional_args {
@@ -1610,19 +1610,19 @@ mod tests {
                 let (__handle, addr) = run_server(*LOCALHOST, api).await.unwrap();
                 let params = rpc_params!(*INVALID_CLASS_HASH);
                 let error = client(addr)
-                    .request::<ContractCode>("starknet_getClass", params)
+                    .request::<ContractClass>("starknet_getClass", params)
                     .await
                     .unwrap_err();
                 assert_eq!(ErrorCode::InvalidContractClassHash, error);
             }
 
             #[tokio::test]
-            async fn returns_abi_and_code_for_known_class() {
+            async fn returns_program_and_entry_points_for_known_class() {
                 let storage = Storage::in_memory().unwrap();
 
                 let mut conn = storage.connection().unwrap();
                 let transaction = conn.transaction().unwrap();
-                let (_contract_address, class_hash) =
+                let (_contract_address, class_hash, entry_points) =
                     setup_class_and_contract(&transaction).unwrap();
                 transaction.commit().unwrap();
 
@@ -1632,19 +1632,13 @@ mod tests {
                 let (__handle, addr) = run_server(*LOCALHOST, api).await.unwrap();
 
                 let params = rpc_params!(class_hash);
-                let code = client(addr)
-                    .request::<ContractCode>("starknet_getClass", params)
+                let class = client(addr)
+                    .request::<ContractClass>("starknet_getClass", params)
                     .await
                     .unwrap();
 
-                let abi = code.abi.to_string();
-                assert_eq!(
-                    abi,
-                    // this should not have the quotes because that'd be in json:
-                    // `"abi":"\"[{....}]\""`
-                    r#"[{"inputs":[{"name":"address","type":"felt"},{"name":"value","type":"felt"}],"name":"increase_value","outputs":[],"type":"function"},{"inputs":[{"name":"contract_address","type":"felt"},{"name":"address","type":"felt"},{"name":"value","type":"felt"}],"name":"call_increase_value","outputs":[],"type":"function"},{"inputs":[{"name":"address","type":"felt"}],"name":"get_value","outputs":[{"name":"res","type":"felt"}],"type":"function"}]"#
-                );
-                assert_eq!(code.bytecode.len(), 132);
+                assert_eq!(class.entry_points_by_type, entry_points);
+                assert_eq!(class.program.len(), 132);
             }
         }
 
@@ -1653,12 +1647,12 @@ mod tests {
             use pretty_assertions::assert_eq;
 
             #[tokio::test]
-            async fn returns_abi_and_code_for_known_class() {
+            async fn returns_program_and_entry_points_for_known_class() {
                 let storage = Storage::in_memory().unwrap();
 
                 let mut conn = storage.connection().unwrap();
                 let transaction = conn.transaction().unwrap();
-                let (_contract_address, class_hash) =
+                let (_contract_address, class_hash, entry_points) =
                     setup_class_and_contract(&transaction).unwrap();
                 transaction.commit().unwrap();
 
@@ -1668,19 +1662,13 @@ mod tests {
                 let (__handle, addr) = run_server(*LOCALHOST, api).await.unwrap();
 
                 let params = by_name([("class_hash", json!(class_hash))]);
-                let code = client(addr)
-                    .request::<ContractCode>("starknet_getClass", params)
+                let class = client(addr)
+                    .request::<ContractClass>("starknet_getClass", params)
                     .await
                     .unwrap();
 
-                let abi = code.abi.to_string();
-                assert_eq!(
-                    abi,
-                    // this should not have the quotes because that'd be in json:
-                    // `"abi":"\"[{....}]\""`
-                    r#"[{"inputs":[{"name":"address","type":"felt"},{"name":"value","type":"felt"}],"name":"increase_value","outputs":[],"type":"function"},{"inputs":[{"name":"contract_address","type":"felt"},{"name":"address","type":"felt"},{"name":"value","type":"felt"}],"name":"call_increase_value","outputs":[],"type":"function"},{"inputs":[{"name":"address","type":"felt"}],"name":"get_value","outputs":[{"name":"res","type":"felt"}],"type":"function"}]"#
-                );
-                assert_eq!(code.bytecode.len(), 132);
+                assert_eq!(class.entry_points_by_type, entry_points);
+                assert_eq!(class.program.len(), 132);
             }
         }
     }
@@ -1715,7 +1703,7 @@ mod tests {
 
                 let mut conn = storage.connection().unwrap();
                 let transaction = conn.transaction().unwrap();
-                let (contract_address, expected_class_hash) =
+                let (contract_address, expected_class_hash, _entry_points) =
                     setup_class_and_contract(&transaction).unwrap();
                 transaction.commit().unwrap();
 
@@ -1743,7 +1731,7 @@ mod tests {
 
                 let mut conn = storage.connection().unwrap();
                 let transaction = conn.transaction().unwrap();
-                let (contract_address, expected_class_hash) =
+                let (contract_address, expected_class_hash, _entry_points) =
                     setup_class_and_contract(&transaction).unwrap();
                 transaction.commit().unwrap();
 
@@ -1765,7 +1753,7 @@ mod tests {
     mod get_class_at {
         use super::contract_setup::setup_class_and_contract;
         use super::*;
-        use crate::core::ContractCode;
+        use crate::core::ContractClass;
         use crate::rpc::types::reply::ErrorCode;
         use pretty_assertions::assert_eq;
 
@@ -1778,7 +1766,7 @@ mod tests {
             let (__handle, addr) = run_server(*LOCALHOST, api).await.unwrap();
             let params = rpc_params!(*INVALID_CONTRACT_ADDR);
             let error = client(addr)
-                .request::<ContractCode>("starknet_getClassAt", params)
+                .request::<ContractClass>("starknet_getClassAt", params)
                 .await
                 .unwrap_err();
             assert_eq!(ErrorCode::ContractNotFound, error);
@@ -1793,7 +1781,7 @@ mod tests {
             let (__handle, addr) = run_server(*LOCALHOST, api).await.unwrap();
 
             let not_found = client(addr)
-                .request::<ContractCode>(
+                .request::<ContractClass>(
                     "starknet_getClassAt",
                     rpc_params!(
                         "0x4ae0618c330c59559a59a27d143dd1c07cd74cf4e5e5a7cd85d53c6bf0e89dc"
@@ -1807,14 +1795,15 @@ mod tests {
 
         #[tokio::test]
         async fn returns_abi_and_code_for_known() {
-            use crate::core::ContractCode;
+            use crate::core::ContractClass;
             use futures::stream::TryStreamExt;
 
             let storage = Storage::in_memory().unwrap();
 
             let mut conn = storage.connection().unwrap();
             let transaction = conn.transaction().unwrap();
-            let (contract_address, _class_hash) = setup_class_and_contract(&transaction).unwrap();
+            let (contract_address, _class_hash, entry_points) =
+                setup_class_and_contract(&transaction).unwrap();
             transaction.commit().unwrap();
 
             let sequencer = SeqClient::new(Chain::Goerli).unwrap();
@@ -1830,7 +1819,7 @@ mod tests {
                 by_name([("contract_address", json!(contract_address))]),
             ]
             .into_iter()
-            .map(|arg| client.request::<ContractCode>("starknet_getClassAt", arg))
+            .map(|arg| client.request::<ContractClass>("starknet_getClassAt", arg))
             .collect::<futures::stream::FuturesOrdered<_>>()
             .try_collect::<Vec<_>>()
             .await
@@ -1839,14 +1828,8 @@ mod tests {
             assert_eq!(rets.len(), 2);
 
             assert_eq!(rets[0], rets[1]);
-            let abi = rets[0].abi.to_string();
-            assert_eq!(
-                abi,
-                // this should not have the quotes because that'd be in json:
-                // `"abi":"\"[{....}]\""`
-                r#"[{"inputs":[{"name":"address","type":"felt"},{"name":"value","type":"felt"}],"name":"increase_value","outputs":[],"type":"function"},{"inputs":[{"name":"contract_address","type":"felt"},{"name":"address","type":"felt"},{"name":"value","type":"felt"}],"name":"call_increase_value","outputs":[],"type":"function"},{"inputs":[{"name":"address","type":"felt"}],"name":"get_value","outputs":[{"name":"res","type":"felt"}],"type":"function"}]"#
-            );
-            assert_eq!(rets[0].bytecode.len(), 132);
+            assert_eq!(rets[0].entry_points_by_type, entry_points);
+            assert_eq!(rets[0].program.len(), 132);
         }
     }
 
@@ -1864,7 +1847,8 @@ mod tests {
 
             let mut conn = storage.connection().unwrap();
             let transaction = conn.transaction().unwrap();
-            let (contract_address, _class_hash) = setup_class_and_contract(&transaction).unwrap();
+            let (contract_address, _class_hash, _entry_points) =
+                setup_class_and_contract(&transaction).unwrap();
             transaction.commit().unwrap();
 
             let sequencer = SeqClient::new(Chain::Goerli).unwrap();
@@ -1908,7 +1892,7 @@ mod tests {
 
         pub fn setup_class_and_contract(
             transaction: &rusqlite::Transaction,
-        ) -> anyhow::Result<(ContractAddress, ClassHash)> {
+        ) -> anyhow::Result<(ContractAddress, ClassHash, serde_json::Value)> {
             let contract_definition = include_bytes!("../fixtures/contract_definition.json.zst");
             let buffer = zstd::decode_all(std::io::Cursor::new(contract_definition))?;
             let contract_definition = Bytes::from(buffer);
@@ -1929,6 +1913,9 @@ mod tests {
 
             assert_eq!(hash.0, expected_hash);
 
+            let entry_points =
+                crate::state::class_hash::extract_entry_points_by_type(&*contract_definition)?;
+
             crate::storage::ContractCodeTable::insert(
                 transaction,
                 hash,
@@ -1940,7 +1927,7 @@ mod tests {
 
             crate::storage::ContractsTable::upsert(transaction, contract_address, hash)?;
 
-            Ok((contract_address, hash))
+            Ok((contract_address, hash, entry_points))
         }
     }
 
