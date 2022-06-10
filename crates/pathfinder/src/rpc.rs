@@ -1794,7 +1794,7 @@ mod tests {
         }
 
         #[tokio::test]
-        async fn returns_abi_and_code_for_known() {
+        async fn returns_program_and_entry_points_for_known_class() {
             use crate::core::ContractClass;
             use futures::stream::TryStreamExt;
 
